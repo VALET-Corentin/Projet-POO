@@ -4,30 +4,14 @@
 
 
 #------------------------------------------------------------
-# Table: Code_postal
+# Table: Ville
 #------------------------------------------------------------
 
-CREATE TABLE Code_postal(
-        ville       Int  Auto_increment  NOT NULL ,
+CREATE TABLE Ville(
+        ville       Char (40) NOT NULL ,
         code_postal Varchar (5) NOT NULL ,
-        pays        Varchar (40) NOT NULL
-	,CONSTRAINT Code_postal_PK PRIMARY KEY (ville)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: Client
-#------------------------------------------------------------
-
-CREATE TABLE Client(
-        id_client                 Int  Auto_increment  NOT NULL ,
-        client_nom                Varchar (40) NOT NULL ,
-        client_prenom             Varchar (40) NOT NULL ,
-        client_date_naissance     Date NOT NULL ,
-        client_date_premier_achat Date NOT NULL ,
-        client_adresse_mail       Varchar (40) ,
-        client_numero_telephone   Char (10)
-	,CONSTRAINT Client_PK PRIMARY KEY (id_client)
+        pays        Char (40) NOT NULL
+        ,CONSTRAINT Ville_PK PRIMARY KEY (ville)
 )ENGINE=InnoDB;
 
 
@@ -37,30 +21,26 @@ CREATE TABLE Client(
 
 CREATE TABLE Adresse(
         id_adresse Int  Auto_increment  NOT NULL ,
-        numero_rue Varchar (50) NOT NULL ,
-        nom_rue    Varchar (40) NOT NULL ,
-        id_client  Int NOT NULL ,
-        ville      Int NOT NULL
-	,CONSTRAINT Adresse_PK PRIMARY KEY (id_adresse)
+        numero_rue Int NOT NULL ,
+        nom_rue    Char (40) NOT NULL ,
+        ville      Char (40) NOT NULL
+        ,CONSTRAINT Adresse_PK PRIMARY KEY (id_adresse)
 )ENGINE=InnoDB;
 
 
 #------------------------------------------------------------
-# Table: Personnel
+# Table: Client
 #------------------------------------------------------------
 
-CREATE TABLE Personnel(
-        id_personnel                     Int  Auto_increment  NOT NULL ,
-        personnel_nom                    Varchar (40) NOT NULL ,
-        personnel_prenom                 Varchar (40) NOT NULL ,
-        personnel_superieur_hierarchique Varchar (40) NOT NULL ,
-        personnel_date_embauche          Date NOT NULL ,
-        personnel_adresse_mail           Varchar (40) ,
-        personnel_numero_telephone       Varchar (10) ,
-        id_superieur                     Int NOT NULL ,
-        type_adresse                     Char (40) NOT NULL ,
-        id_adresse                       Int NOT NULL
-	,CONSTRAINT Personnel_PK PRIMARY KEY (id_personnel)
+CREATE TABLE Client(
+        id_client                 Int  Auto_increment  NOT NULL ,
+        client_nom                Char (40) NOT NULL ,
+        client_prenom             Char (40) NOT NULL ,
+        client_date_naissance     Date NOT NULL ,
+        client_date_premier_achat Date NOT NULL ,
+        client_adresse_mail       Varchar (40) ,
+        client_numero_telephone   Varchar (10)
+        ,CONSTRAINT Client_PK PRIMARY KEY (id_client)
 )ENGINE=InnoDB;
 
 
@@ -73,9 +53,38 @@ CREATE TABLE Article(
         article_nom                       Varchar (40) NOT NULL ,
         article_quantite                  Int NOT NULL ,
         article_puht                      Real NOT NULL ,
-        article_nature                    Varchar (40) NOT NULL ,
+        article_nature                    Char (40) NOT NULL ,
         artcile_seuil_reapprovisionnement Int NOT NULL
-	,CONSTRAINT Article_PK PRIMARY KEY (id_article)
+        ,CONSTRAINT Article_PK PRIMARY KEY (id_article)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Livre
+#------------------------------------------------------------
+
+CREATE TABLE Livre(
+        id_adresse   Int NOT NULL ,
+        id_client    Int NOT NULL ,
+        type_adresse Char (5) NOT NULL
+        ,CONSTRAINT Livre_PK PRIMARY KEY (id_adresse,id_client)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Personnel
+#------------------------------------------------------------
+
+CREATE TABLE Personnel(
+        id_personnel               Int  Auto_increment  NOT NULL ,
+        personnel_nom              Char (40) NOT NULL ,
+        personnel_prenom           Char (40) NOT NULL ,
+        personnel_date_embauche    Date NOT NULL ,
+        personnel_adresse_mail     Varchar (40) ,
+        personnel_numero_telephone Varchar (10) ,
+        id_adresse                 Int NOT NULL ,
+        id_personnel_Est_gere      Int
+        ,CONSTRAINT Personnel_PK PRIMARY KEY (id_personnel)
 )ENGINE=InnoDB;
 
 
@@ -94,7 +103,7 @@ CREATE TABLE Commande(
         montant_total_ttc Real NOT NULL ,
         id_client         Int NOT NULL ,
         id_facture        Int NOT NULL
-	,CONSTRAINT Commande_PK PRIMARY KEY (id_commande)
+        ,CONSTRAINT Commande_PK PRIMARY KEY (id_commande)
 )ENGINE=InnoDB;
 
 
@@ -108,7 +117,7 @@ CREATE TABLE Facture(
         numero_service_client Varchar (40) NOT NULL ,
         logo_societe          Varchar (40) NOT NULL ,
         id_commande           Int NOT NULL
-	,CONSTRAINT Facture_PK PRIMARY KEY (id_facture)
+        ,CONSTRAINT Facture_PK PRIMARY KEY (id_facture)
 )ENGINE=InnoDB;
 
 
@@ -120,11 +129,10 @@ CREATE TABLE Paiement(
         id_paiement     Int  Auto_increment  NOT NULL ,
         date_paiement   Date NOT NULL ,
         date_reglement  Date NOT NULL ,
-        moyen_paiement  Varchar (40) NOT NULL ,
+        moyen_paiement  Char (40) NOT NULL ,
         solde_reglement Real NOT NULL ,
-        id_commande     Int NOT NULL ,
         id_facture      Int NOT NULL
-	,CONSTRAINT Paiement_PK PRIMARY KEY (id_paiement)
+        ,CONSTRAINT Paiement_PK PRIMARY KEY (id_paiement)
 )ENGINE=InnoDB;
 
 
@@ -136,66 +144,71 @@ CREATE TABLE Contenir(
         id_article  Int NOT NULL ,
         id_commande Int NOT NULL ,
         quantite    Int NOT NULL
-	,CONSTRAINT Contenir_PK PRIMARY KEY (id_article,id_commande)
+        ,CONSTRAINT Contenir_PK PRIMARY KEY (id_article,id_commande)
 )ENGINE=InnoDB;
 
 
 
 
 ALTER TABLE Adresse
-	ADD CONSTRAINT Adresse_Client0_FK
-	FOREIGN KEY (id_client)
-	REFERENCES Client(id_client);
+        ADD CONSTRAINT Adresse_Ville0_FK
+        FOREIGN KEY (ville)
+        REFERENCES Ville(ville);
 
-ALTER TABLE Adresse
-	ADD CONSTRAINT Adresse_Code_postal1_FK
-	FOREIGN KEY (ville)
-	REFERENCES Code_postal(ville);
+ALTER TABLE Livre
+        ADD CONSTRAINT Livre_Adresse0_FK
+        FOREIGN KEY (id_adresse)
+        REFERENCES Adresse(id_adresse);
+
+ALTER TABLE Livre
+        ADD CONSTRAINT Livre_Client1_FK
+        FOREIGN KEY (id_client)
+        REFERENCES Client(id_client);
 
 ALTER TABLE Personnel
-	ADD CONSTRAINT Personnel_Adresse0_FK
-	FOREIGN KEY (id_adresse)
-	REFERENCES Adresse(id_adresse);
+        ADD CONSTRAINT Personnel_Adresse0_FK
+        FOREIGN KEY (id_adresse)
+        REFERENCES Adresse(id_adresse);
+
+ALTER TABLE Personnel
+        ADD CONSTRAINT Personnel_Personnel1_FK
+        FOREIGN KEY (id_personnel_Est_gere)
+        REFERENCES Personnel(id_personnel);
 
 ALTER TABLE Commande
-	ADD CONSTRAINT Commande_Client0_FK
-	FOREIGN KEY (id_client)
-	REFERENCES Client(id_client);
+        ADD CONSTRAINT Commande_Client0_FK
+        FOREIGN KEY (id_client)
+        REFERENCES Client(id_client);
 
 ALTER TABLE Commande
-	ADD CONSTRAINT Commande_Facture1_FK
-	FOREIGN KEY (id_facture)
-	REFERENCES Facture(id_facture);
+        ADD CONSTRAINT Commande_Facture1_FK
+        FOREIGN KEY (id_facture)
+        REFERENCES Facture(id_facture);
 
 ALTER TABLE Commande 
-	ADD CONSTRAINT Commande_Facture0_AK 
-	UNIQUE (id_facture);
+        ADD CONSTRAINT Commande_Facture0_AK 
+        UNIQUE (id_facture);
 
 ALTER TABLE Facture
-	ADD CONSTRAINT Facture_Commande0_FK
-	FOREIGN KEY (id_commande)
-	REFERENCES Commande(id_commande);
+        ADD CONSTRAINT Facture_Commande0_FK
+        FOREIGN KEY (id_commande)
+        REFERENCES Commande(id_commande);
 
 ALTER TABLE Facture 
-	ADD CONSTRAINT Facture_Commande0_AK 
-	UNIQUE (id_commande);
+        ADD CONSTRAINT Facture_Commande0_AK 
+        UNIQUE (id_commande);
 
 ALTER TABLE Paiement
-	ADD CONSTRAINT Paiement_Commande0_FK
-	FOREIGN KEY (id_commande)
-	REFERENCES Commande(id_commande);
-
-ALTER TABLE Paiement
-	ADD CONSTRAINT Paiement_Facture1_FK
-	FOREIGN KEY (id_facture)
-	REFERENCES Facture(id_facture);
+        ADD CONSTRAINT Paiement_Facture0_FK
+        FOREIGN KEY (id_facture)
+        REFERENCES Facture(id_facture);
 
 ALTER TABLE Contenir
-	ADD CONSTRAINT Contenir_Article0_FK
-	FOREIGN KEY (id_article)
-	REFERENCES Article(id_article);
+        ADD CONSTRAINT Contenir_Article0_FK
+        FOREIGN KEY (id_article)
+        REFERENCES Article(id_article);
 
 ALTER TABLE Contenir
-	ADD CONSTRAINT Contenir_Commande1_FK
-	FOREIGN KEY (id_commande)
-	REFERENCES Commande(id_commande);
+        ADD CONSTRAINT Contenir_Commande1_FK
+        FOREIGN KEY (id_commande)
+        REFERENCES Commande(id_commande);
