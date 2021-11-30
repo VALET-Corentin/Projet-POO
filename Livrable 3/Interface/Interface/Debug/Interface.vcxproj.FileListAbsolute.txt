@@ -1,6 +1,0 @@
-C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\Interface\Interface\Debug\Interface.vcxproj.AssemblyReference.cache
-C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\Interface\Interface\Debug\Interface.MyForm.resources
-C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\Interface\Interface\Debug\Interface.vcxproj.GenerateResource.cache
-C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\Interface\Interface\Debug\Interface.exe
-C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\Interface\Interface\Debug\Interface.Client.resources
-C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\Interface\Interface\Debug\Interface.Catalogue.resources
