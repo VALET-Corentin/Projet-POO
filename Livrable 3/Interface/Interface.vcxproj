@@ -30,28 +30,28 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -123,13 +123,19 @@
   <ItemGroup>
     <ClCompile Include="Accueil.cpp" />
     <ClCompile Include="AddClient.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CAD.cpp" />
     <ClCompile Include="Catalogue.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Comptabilite.cpp" />
+    <ClCompile Include="MAP.cpp" />
     <ClCompile Include="MonEspace.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="pch.cpp" />
     <ClCompile Include="Personnel.cpp" />
+    <ClCompile Include="Projet.cpp" />
+    <ClCompile Include="Service.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Accueil.h">
@@ -138,6 +144,7 @@
     <ClInclude Include="AddClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CAD.h" />
     <ClInclude Include="Catalogue.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -150,15 +157,19 @@
     <ClInclude Include="Comptabilite.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MAP.h" />
     <ClInclude Include="MonEspace.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="pch.h" />
     <ClInclude Include="Personnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Services.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Accueil.resx">
