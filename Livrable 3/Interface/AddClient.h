@@ -1,5 +1,6 @@
 #pragma once
-
+#include "MAP.h"
+#include "ServicesClient.h"
 namespace Interface {
 
 	using namespace System;
@@ -23,21 +24,30 @@ namespace Interface {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
-	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::TextBox^ textBoxemail;
+	public:
+
 	public:
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::TextBox^ textBox5;
+	private: System::Windows::Forms::TextBox^ textBoxbirthdate;
+	private: System::Windows::Forms::TextBox^ textBoxphonenumber;
+
+
 	private: System::Windows::Forms::Label^ Numtel;
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::TextBox^ textBox6;
+	private: System::Windows::Forms::TextBox^ textBoxaddressstreetname;
+
 	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::TextBox^ textBoxaddressenumber;
+
 	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::TextBox^ textBox8;
+	private: System::Windows::Forms::TextBox^ textBoxaddresscity;
+
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ textBox9;
+	private: System::Windows::Forms::TextBox^ textBoxadresszipcode;
+
+
 	private: System::Windows::Forms::Label^ Adresse;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label9;
@@ -57,13 +67,16 @@ namespace Interface {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ textBoxname;
+	protected:
+
 	private: System::Windows::Forms::Label^ Nom;
 	protected:
 
 
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBoxsurname;
+
 	private: System::Windows::Forms::Panel^ panelmove1;
 	private: System::Windows::Forms::Button^ X;
 	private: System::ComponentModel::IContainer^ components;
@@ -84,26 +97,26 @@ namespace Interface {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxname = (gcnew System::Windows::Forms::TextBox());
 			this->Nom = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxsurname = (gcnew System::Windows::Forms::TextBox());
 			this->panelmove1 = (gcnew System::Windows::Forms::Panel());
 			this->X = (gcnew System::Windows::Forms::Button());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxemail = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxbirthdate = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxphonenumber = (gcnew System::Windows::Forms::TextBox());
 			this->Numtel = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxaddressstreetname = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxaddressenumber = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxaddresscity = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxadresszipcode = (gcnew System::Windows::Forms::TextBox());
 			this->Adresse = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
@@ -111,13 +124,13 @@ namespace Interface {
 			this->panelmove1->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// textBox1
+			// textBoxname
 			// 
-			this->textBox1->Location = System::Drawing::Point(488, 98);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(118, 22);
-			this->textBox1->TabIndex = 0;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &AddClient::textBox1_TextChanged);
+			this->textBoxname->Location = System::Drawing::Point(488, 98);
+			this->textBoxname->Name = L"textBoxname";
+			this->textBoxname->Size = System::Drawing::Size(118, 22);
+			this->textBoxname->TabIndex = 0;
+			this->textBoxname->TextChanged += gcnew System::EventHandler(this, &AddClient::textBox1_TextChanged);
 			// 
 			// Nom
 			// 
@@ -128,7 +141,7 @@ namespace Interface {
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->Nom->Location = System::Drawing::Point(377, 89);
 			this->Nom->Name = L"Nom";
-			this->Nom->Size = System::Drawing::Size(68, 32);
+			this->Nom->Size = System::Drawing::Size(64, 31);
 			this->Nom->TabIndex = 2;
 			this->Nom->Text = L"Nom";
 			this->Nom->Click += gcnew System::EventHandler(this, &AddClient::label1_Click);
@@ -142,16 +155,16 @@ namespace Interface {
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->label2->Location = System::Drawing::Point(361, 129);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(98, 32);
+			this->label2->Size = System::Drawing::Size(93, 31);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Prénom";
 			// 
-			// textBox2
+			// textBoxsurname
 			// 
-			this->textBox2->Location = System::Drawing::Point(489, 139);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(117, 22);
-			this->textBox2->TabIndex = 4;
+			this->textBoxsurname->Location = System::Drawing::Point(489, 139);
+			this->textBoxsurname->Name = L"textBoxsurname";
+			this->textBoxsurname->Size = System::Drawing::Size(117, 22);
+			this->textBoxsurname->TabIndex = 4;
 			// 
 			// panelmove1
 			// 
@@ -181,12 +194,13 @@ namespace Interface {
 			this->X->MouseEnter += gcnew System::EventHandler(this, &AddClient::X_MouseEnter);
 			this->X->MouseLeave += gcnew System::EventHandler(this, &AddClient::X_MouseLeave);
 			// 
-			// textBox3
+			// textBoxemail
 			// 
-			this->textBox3->Location = System::Drawing::Point(490, 283);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(251, 22);
-			this->textBox3->TabIndex = 14;
+			this->textBoxemail->Location = System::Drawing::Point(490, 283);
+			this->textBoxemail->Name = L"textBoxemail";
+			this->textBoxemail->Size = System::Drawing::Size(251, 22);
+			this->textBoxemail->TabIndex = 14;
+			this->textBoxemail->TextChanged += gcnew System::EventHandler(this, &AddClient::textBox3_TextChanged);
 			// 
 			// label3
 			// 
@@ -197,7 +211,7 @@ namespace Interface {
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->label3->Location = System::Drawing::Point(380, 273);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(72, 32);
+			this->label3->Size = System::Drawing::Size(70, 31);
 			this->label3->TabIndex = 15;
 			this->label3->Text = L"Email";
 			this->label3->Click += gcnew System::EventHandler(this, &AddClient::label3_Click);
@@ -211,26 +225,26 @@ namespace Interface {
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->label4->Location = System::Drawing::Point(244, 231);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(208, 32);
+			this->label4->Size = System::Drawing::Size(199, 31);
 			this->label4->TabIndex = 19;
 			this->label4->Text = L"Date de naissance";
 			this->label4->Click += gcnew System::EventHandler(this, &AddClient::label4_Click);
 			// 
-			// textBox4
+			// textBoxbirthdate
 			// 
-			this->textBox4->Location = System::Drawing::Point(490, 240);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(154, 22);
-			this->textBox4->TabIndex = 18;
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &AddClient::textBox4_TextChanged);
+			this->textBoxbirthdate->Location = System::Drawing::Point(490, 240);
+			this->textBoxbirthdate->Name = L"textBoxbirthdate";
+			this->textBoxbirthdate->Size = System::Drawing::Size(154, 22);
+			this->textBoxbirthdate->TabIndex = 18;
+			this->textBoxbirthdate->TextChanged += gcnew System::EventHandler(this, &AddClient::textBox4_TextChanged);
 			// 
-			// textBox5
+			// textBoxphonenumber
 			// 
-			this->textBox5->Location = System::Drawing::Point(490, 327);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(175, 22);
-			this->textBox5->TabIndex = 17;
-			this->textBox5->TextChanged += gcnew System::EventHandler(this, &AddClient::textBox5_TextChanged);
+			this->textBoxphonenumber->Location = System::Drawing::Point(490, 327);
+			this->textBoxphonenumber->Name = L"textBoxphonenumber";
+			this->textBoxphonenumber->Size = System::Drawing::Size(175, 22);
+			this->textBoxphonenumber->TabIndex = 17;
+			this->textBoxphonenumber->TextChanged += gcnew System::EventHandler(this, &AddClient::textBox5_TextChanged);
 			// 
 			// Numtel
 			// 
@@ -241,7 +255,7 @@ namespace Interface {
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->Numtel->Location = System::Drawing::Point(199, 318);
 			this->Numtel->Name = L"Numtel";
-			this->Numtel->Size = System::Drawing::Size(253, 32);
+			this->Numtel->Size = System::Drawing::Size(238, 31);
 			this->Numtel->TabIndex = 16;
 			this->Numtel->Text = L"Numéro de téléphone";
 			this->Numtel->Click += gcnew System::EventHandler(this, &AddClient::label5_Click);
@@ -255,18 +269,18 @@ namespace Interface {
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->label5->Location = System::Drawing::Point(345, 415);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(144, 32);
+			this->label5->Size = System::Drawing::Size(135, 31);
 			this->label5->TabIndex = 21;
 			this->label5->Text = L"Nom de rue";
 			this->label5->Click += gcnew System::EventHandler(this, &AddClient::label5_Click_1);
 			// 
-			// textBox6
+			// textBoxaddressstreetname
 			// 
-			this->textBox6->Location = System::Drawing::Point(310, 463);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(212, 22);
-			this->textBox6->TabIndex = 20;
-			this->textBox6->TextChanged += gcnew System::EventHandler(this, &AddClient::textBox6_TextChanged);
+			this->textBoxaddressstreetname->Location = System::Drawing::Point(310, 463);
+			this->textBoxaddressstreetname->Name = L"textBoxaddressstreetname";
+			this->textBoxaddressstreetname->Size = System::Drawing::Size(212, 22);
+			this->textBoxaddressstreetname->TabIndex = 20;
+			this->textBoxaddressstreetname->TextChanged += gcnew System::EventHandler(this, &AddClient::textBox6_TextChanged);
 			// 
 			// label6
 			// 
@@ -277,16 +291,16 @@ namespace Interface {
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->label6->Location = System::Drawing::Point(60, 415);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(189, 32);
+			this->label6->Size = System::Drawing::Size(178, 31);
 			this->label6->TabIndex = 23;
 			this->label6->Text = L"Numéros de rue";
 			// 
-			// textBox7
+			// textBoxaddressenumber
 			// 
-			this->textBox7->Location = System::Drawing::Point(87, 463);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(123, 22);
-			this->textBox7->TabIndex = 22;
+			this->textBoxaddressenumber->Location = System::Drawing::Point(87, 463);
+			this->textBoxaddressenumber->Name = L"textBoxaddressenumber";
+			this->textBoxaddressenumber->Size = System::Drawing::Size(123, 22);
+			this->textBoxaddressenumber->TabIndex = 22;
 			// 
 			// label7
 			// 
@@ -297,16 +311,16 @@ namespace Interface {
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->label7->Location = System::Drawing::Point(638, 415);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(61, 32);
+			this->label7->Size = System::Drawing::Size(58, 31);
 			this->label7->TabIndex = 25;
 			this->label7->Text = L"Ville";
 			// 
-			// textBox8
+			// textBoxaddresscity
 			// 
-			this->textBox8->Location = System::Drawing::Point(620, 463);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(100, 22);
-			this->textBox8->TabIndex = 24;
+			this->textBoxaddresscity->Location = System::Drawing::Point(620, 463);
+			this->textBoxaddresscity->Name = L"textBoxaddresscity";
+			this->textBoxaddresscity->Size = System::Drawing::Size(100, 22);
+			this->textBoxaddresscity->TabIndex = 24;
 			// 
 			// label8
 			// 
@@ -317,16 +331,16 @@ namespace Interface {
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->label8->Location = System::Drawing::Point(794, 415);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(142, 32);
+			this->label8->Size = System::Drawing::Size(136, 31);
 			this->label8->TabIndex = 27;
 			this->label8->Text = L"Code postal";
 			// 
-			// textBox9
+			// textBoxadresszipcode
 			// 
-			this->textBox9->Location = System::Drawing::Point(820, 463);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(100, 22);
-			this->textBox9->TabIndex = 26;
+			this->textBoxadresszipcode->Location = System::Drawing::Point(820, 463);
+			this->textBoxadresszipcode->Name = L"textBoxadresszipcode";
+			this->textBoxadresszipcode->Size = System::Drawing::Size(100, 22);
+			this->textBoxadresszipcode->TabIndex = 26;
 			// 
 			// Adresse
 			// 
@@ -337,7 +351,7 @@ namespace Interface {
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->Adresse->Location = System::Drawing::Point(453, 371);
 			this->Adresse->Name = L"Adresse";
-			this->Adresse->Size = System::Drawing::Size(105, 32);
+			this->Adresse->Size = System::Drawing::Size(97, 31);
 			this->Adresse->TabIndex = 28;
 			this->Adresse->Text = L"Adresse";
 			// 
@@ -350,7 +364,7 @@ namespace Interface {
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->label1->Location = System::Drawing::Point(361, 185);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(294, 32);
+			this->label1->Size = System::Drawing::Size(275, 31);
 			this->label1->TabIndex = 29;
 			this->label1->Text = L"Information personnelle";
 			// 
@@ -363,7 +377,7 @@ namespace Interface {
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->label9->Location = System::Drawing::Point(453, 42);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(93, 32);
+			this->label9->Size = System::Drawing::Size(89, 31);
 			this->label9->TabIndex = 30;
 			this->label9->Text = L"Civilité";
 			// 
@@ -392,24 +406,24 @@ namespace Interface {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Adresse);
 			this->Controls->Add(this->label8);
-			this->Controls->Add(this->textBox9);
+			this->Controls->Add(this->textBoxadresszipcode);
 			this->Controls->Add(this->label7);
-			this->Controls->Add(this->textBox8);
+			this->Controls->Add(this->textBoxaddresscity);
 			this->Controls->Add(this->label6);
-			this->Controls->Add(this->textBox7);
+			this->Controls->Add(this->textBoxaddressenumber);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->textBox6);
+			this->Controls->Add(this->textBoxaddressstreetname);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox5);
+			this->Controls->Add(this->textBoxbirthdate);
+			this->Controls->Add(this->textBoxphonenumber);
 			this->Controls->Add(this->Numtel);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->textBoxemail);
 			this->Controls->Add(this->panelmove1);
-			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->textBoxsurname);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->Nom);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->textBoxname);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"AddClient";
 			this->Text = L"AddClient";
@@ -449,6 +463,7 @@ namespace Interface {
 		this->Close();
 	}
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -475,7 +490,29 @@ private: System::Void label5_Click_1(System::Object^ sender, System::EventArgs^ 
 private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void Valide_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
+	 servicesclient^ oservicesclient= gcnew servicesclient();
+	 CLclient^ oclient =gcnew CLclient();
+	 CAD^ connection= gcnew CAD();
+
+
+	 oclient->setNom(textBoxsurname->Text); 	 
+	 oclient->setPrenom(textBoxname->Text);
+	 oclient->setAdressemail(textBoxemail->Text);
+	 oclient->setNumerotelephone(textBoxphonenumber->Text);
+	 oclient->setClientdatenaissance(textBoxbirthdate->Text);
+	 /*oclient->setNumerorue(textBoxaddressenumber->Text);
+	 oclient->setNomrue(textBoxaddressstreetname->Text);
+	 oclient->setCodepostal(textBoxadresszipcode->Text);
+	 oclient->setVille(textBoxaddresscity->Text);*/
+	 
+
+	 //Mettre les setter pour nos attributs de la table client
+
+	 oservicesclient->setoMap(oclient);
+	 oservicesclient->insererclient(oclient);
+	 this->Close();
+}
+private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

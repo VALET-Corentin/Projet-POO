@@ -4,7 +4,7 @@
 
 CAD::CAD(void)
 {
-	this->chainecon = "Data Source = LAPTOP-OUHMHNOM\\SQLEXPRESS;Initial Catalog=\"DB 6\";Persist Security Info=True;User ID=\"Prosit 6\";Password=tomlucmarty27";
+	this->chainecon = "Data Source=LAPTOP-OUHMHNOM\\SQLEXPRESS;Initial Catalog=DB_Proj;Integrated Security=True";
 
 	this->requete = "Rien";
 
