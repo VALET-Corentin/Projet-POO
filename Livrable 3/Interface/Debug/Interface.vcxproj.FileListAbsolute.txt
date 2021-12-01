@@ -10,16 +10,4 @@ C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\Int
 C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\Interface\Interface\Debug\Interface.Personnel.resources
 C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\Interface\Interface\Debug\Interface.MonEspace.resources
 C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\Interface\Interface\Debug\Interface.AddClient.resources
-C:\Users\tomaa\OneDrive - Association Cesi Viacesi mail\Documents\TOM\Année 2021-2022\Bloc 2 POO\PROJET\Livrable 3\Interface\Debug\Interface.vcxproj.AssemblyReference.cache
-C:\Users\tomaa\OneDrive - Association Cesi Viacesi mail\Documents\TOM\Année 2021-2022\Bloc 2 POO\PROJET\Livrable 3\Interface\Debug\Interface.vcxproj.SuggestedBindingRedirects.cache
-C:\Users\tomaa\OneDrive - Association Cesi Viacesi mail\Documents\TOM\Année 2021-2022\Bloc 2 POO\PROJET\Livrable 3\Interface\Debug\Interface.Accueil.resources
-C:\Users\tomaa\OneDrive - Association Cesi Viacesi mail\Documents\TOM\Année 2021-2022\Bloc 2 POO\PROJET\Livrable 3\Interface\Debug\Interface.AddClient.resources
-C:\Users\tomaa\OneDrive - Association Cesi Viacesi mail\Documents\TOM\Année 2021-2022\Bloc 2 POO\PROJET\Livrable 3\Interface\Debug\Interface.Catalogue.resources
-C:\Users\tomaa\OneDrive - Association Cesi Viacesi mail\Documents\TOM\Année 2021-2022\Bloc 2 POO\PROJET\Livrable 3\Interface\Debug\Interface.Client.resources
-C:\Users\tomaa\OneDrive - Association Cesi Viacesi mail\Documents\TOM\Année 2021-2022\Bloc 2 POO\PROJET\Livrable 3\Interface\Debug\Interface.Commande.resources
-C:\Users\tomaa\OneDrive - Association Cesi Viacesi mail\Documents\TOM\Année 2021-2022\Bloc 2 POO\PROJET\Livrable 3\Interface\Debug\Interface.Comptabilite.resources
-C:\Users\tomaa\OneDrive - Association Cesi Viacesi mail\Documents\TOM\Année 2021-2022\Bloc 2 POO\PROJET\Livrable 3\Interface\Debug\Interface.MonEspace.resources
-C:\Users\tomaa\OneDrive - Association Cesi Viacesi mail\Documents\TOM\Année 2021-2022\Bloc 2 POO\PROJET\Livrable 3\Interface\Debug\Interface.MyForm.resources
-C:\Users\tomaa\OneDrive - Association Cesi Viacesi mail\Documents\TOM\Année 2021-2022\Bloc 2 POO\PROJET\Livrable 3\Interface\Debug\Interface.Personnel.resources
-C:\Users\tomaa\OneDrive - Association Cesi Viacesi mail\Documents\TOM\Année 2021-2022\Bloc 2 POO\PROJET\Livrable 3\Interface\Debug\Interface.vcxproj.GenerateResource.cache
-C:\Users\tomaa\OneDrive - Association Cesi Viacesi mail\Documents\TOM\Année 2021-2022\Bloc 2 POO\PROJET\Livrable 3\Interface\Debug\Interface.exe
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\Interface\Interface\Debug\Interface.SuppClient.resources

@@ -133,17 +133,17 @@ void CLclient::setClientdatepremierachat(System::String^ clientdatepremierachat)
 {
     client_date_premier_achat = clientdatepremierachat;
 }
-String^ CLclient::Select() 
+String^ CLclient::Select()
 {
     return "select * from Client ";
 }
 String^ CLclient::Insert()
 {
-    return "insert into Client ('client_nom','client_prenom','client_date_naissance','client_date_premier_achat','client_adresse_mail','client_numero_telephone') values('" + this->nom+ "','"+this->prenom+"','"+this->client_date_naissance+"','"+this->client_date_premier_achat+"','"+adresse_mail+"','"+numero_telephone+"');";
+    return "insert into Client ('client_nom','client_prenom','client_date_naissance','client_date_premier_achat','client_adresse_mail','client_numero_telephone') values('" + this->nom + "','" + this->prenom + "','" + this->client_date_naissance + "','" + this->client_date_premier_achat + "','" + adresse_mail + "','" + numero_telephone + "');";
 }
 String^ CLclient::Delete()
 {
-    return "delete from Client where id_client=" + this->id_personne +";";
+    return "delete from Client where id_client=" + this->id_personne + ";";
 }
 String^ CLclient::Update()
 {

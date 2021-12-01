@@ -7,6 +7,7 @@
   Interface.MonEspace.resources - Embedded, ContainedInManifestFile, 
   Interface.MyForm.resources - Embedded, ContainedInManifestFile, 
   Interface.Personnel.resources - Embedded, ContainedInManifestFile, 
+  Interface.SuppClient.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Interface, Version=1.0.*, Culture=Langue indifférente (Pays indifférent): 
 	hash=SHA1, flags=PublicKey
@@ -29,6 +30,9 @@ Class Interface.AddClient: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Interface.Catalogue: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Interface.SuppClient: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Interface.Client: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

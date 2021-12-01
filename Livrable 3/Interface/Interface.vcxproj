@@ -30,28 +30,28 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -123,7 +123,7 @@
   <ItemGroup>
     <ClCompile Include="Accueil.cpp" />
     <ClCompile Include="AddClient.cpp" />
-    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="Assemblyinfo.cpp" />
     <ClCompile Include="CAD.cpp" />
     <ClCompile Include="Catalogue.cpp" />
     <ClCompile Include="Client.cpp" />
@@ -134,8 +134,8 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Personnel.cpp" />
-    <ClCompile Include="Projet.cpp" />
-    <ClCompile Include="Service.cpp" />
+    <ClCompile Include="ServiceClient.cpp" />
+    <ClCompile Include="SuppClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Accueil.h">
@@ -168,8 +168,11 @@
     <ClInclude Include="Personnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Resource.h" />
-    <ClInclude Include="Services.h" />
+    <ClInclude Include="Ressource.h" />
+    <ClInclude Include="ServicesClient.h" />
+    <ClInclude Include="SuppClient.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Accueil.resx">
@@ -198,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Personnel.resx">
       <DependentUpon>Personnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuppClient.resx">
+      <DependentUpon>SuppClient.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -11,7 +11,7 @@ public:
 */
 //#---Classe Personne ---#
 
-ref class CLpersonne 
+ref class CLpersonne
 {
 protected:
     int id_personne;
@@ -61,10 +61,10 @@ public:
 
     System::String^ getPersonneldateembauche();
     void setPersonneldateembauche(System::String^ personneldateembauche);
-    System::String^ Select() override;
-    System::String^ Insert() override;
-    System::String^ Delete() override;
-    System::String^ Update() override;
+   // System::String^ Select() override;
+    //System::String^ Insert() override;
+    //System::String^ Delete() override;
+    //System::String^ Update() override;
 
 };
 
@@ -93,7 +93,7 @@ public:
 
 //#---Classe Facture ---#
 
-ref class CLfacture 
+ref class CLfacture
 {
 private:
 
@@ -153,7 +153,7 @@ public:
 
 //#---Classe Article ---#
 
-ref class CLarticle 
+ref class CLarticle
 {
 private:
 
@@ -187,7 +187,7 @@ public:
 
 //#---Classe Commande ---#
 
-ref class CLcommande 
+ref class CLcommande
 {
 private:
 
@@ -251,7 +251,7 @@ public:
 
 //#---Classe Livre ---#
 
-ref class CLlivre 
+ref class CLlivre
 {
 private:
 

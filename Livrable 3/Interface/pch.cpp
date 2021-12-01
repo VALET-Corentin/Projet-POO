@@ -1,5 +1,5 @@
-// pch.cppÂ : fichier source correspondant Ã  l'en-tÃªte prÃ©compilÃ©
+// pch.cpp : fichier source correspondant à l'en-tête précompilé
 
 #include "pch.h"
 
-// Quand vous utilisez des en-tÃªtes prÃ©compilÃ©s, ce fichier source est nÃ©cessaire pour la rÃ©ussite de la compilation.
+// Quand vous utilisez des en-têtes précompilés, ce fichier source est nécessaire pour la réussite de la compilation.

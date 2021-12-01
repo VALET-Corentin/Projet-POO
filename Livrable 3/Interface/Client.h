@@ -1,5 +1,6 @@
 #pragma once
 #include "AddClient.h"
+#include "SuppClient.h"
 
 
 namespace Interface {
@@ -126,6 +127,7 @@ namespace Interface {
 			this->btn_suppclient->Text = L"Supprimer un client";
 			this->btn_suppclient->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->btn_suppclient->UseVisualStyleBackColor = false;
+			this->btn_suppclient->Click += gcnew System::EventHandler(this, &Client::btn_suppclient_Click);
 			// 
 			// btn_addclient
 			// 
@@ -177,5 +179,9 @@ namespace Interface {
 		
 
 	}
+private: System::Void btn_suppclient_Click(System::Object^ sender, System::EventArgs^ e) {
+	Interface::SuppClient^ suppclientFrm = gcnew Interface::SuppClient();
+	suppclientFrm->ShowDialog();
+}
 };
 }

@@ -463,58 +463,58 @@ namespace Interface {
 		this->Close();
 	}
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		
+
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 
-private: System::Void X_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	this->X->BackColor = Color::FromArgb(221, 25, 23);
-}
-private: System::Void X_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	this->X->BackColor = Color::FromArgb(255, 255, 255);
-}
+	private: System::Void X_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		this->X->BackColor = Color::FromArgb(221, 25, 23);
+	}
+	private: System::Void X_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		this->X->BackColor = Color::FromArgb(255, 255, 255);
+	}
 
-private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label5_Click_1(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void Valide_Click(System::Object^ sender, System::EventArgs^ e) {
-	 servicesclient^ oservicesclient= gcnew servicesclient();
-	 CLclient^ oclient =gcnew CLclient();
-	 CAD^ connection= gcnew CAD();
+	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label5_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void Valide_Click(System::Object^ sender, System::EventArgs^ e) {
+		servicesclient^ oservicesclient = gcnew servicesclient();
+		CLclient^ oclient = gcnew CLclient();
+		CAD^ connection = gcnew CAD();
 
 
-	 oclient->setNom(textBoxsurname->Text); 	 
-	 oclient->setPrenom(textBoxname->Text);
-	 oclient->setAdressemail(textBoxemail->Text);
-	 oclient->setNumerotelephone(textBoxphonenumber->Text);
-	 oclient->setClientdatenaissance(textBoxbirthdate->Text);
-	 /*oclient->setNumerorue(textBoxaddressenumber->Text);
-	 oclient->setNomrue(textBoxaddressstreetname->Text);
-	 oclient->setCodepostal(textBoxadresszipcode->Text);
-	 oclient->setVille(textBoxaddresscity->Text);*/
-	 
+		oclient->setNom(textBoxsurname->Text);
+		oclient->setPrenom(textBoxname->Text);
+		oclient->setAdressemail(textBoxemail->Text);
+		oclient->setNumerotelephone(textBoxphonenumber->Text);
+		oclient->setClientdatenaissance(textBoxbirthdate->Text);
+		/*oclient->setNumerorue(textBoxaddressenumber->Text);
+		oclient->setNomrue(textBoxaddressstreetname->Text);
+		oclient->setCodepostal(textBoxadresszipcode->Text);
+		oclient->setVille(textBoxaddresscity->Text);*/
 
-	 //Mettre les setter pour nos attributs de la table client
 
-	 oservicesclient->setoMap(oclient);
-	 oservicesclient->insererclient(oclient);
-	 this->Close();
-}
-private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+		//Mettre les setter pour nos attributs de la table client
+
+		oservicesclient->setoMap(oclient);
+		oservicesclient->insererclient(oclient);
+		this->Close();
+	}
+	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	};
 }
 
 
