@@ -1,4 +1,7 @@
 #pragma once
+#include "AddArticle.h"
+#include "ListeArticle.h"
+#include "ModifierArticle.h"
 
 namespace Interface {
 
@@ -164,14 +167,20 @@ namespace Interface {
 		}
 #pragma endregion
 	private: System::Void btn_client_Click(System::Object^ sender, System::EventArgs^ e) {
+		Interface::ListeArticle^ listArticle = gcnew Interface::ListeArticle();
+		listArticle->ShowDialog();
 	}
 private: System::Void Catalogue_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void btn_addarticle_Click(System::Object^ sender, System::EventArgs^ e) {
+	Interface::AddArticle^ addarticleFrm = gcnew Interface::AddArticle();
+	addarticleFrm->ShowDialog();
 }
 private: System::Void btn_deletearticle_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void btn_modifierarticle_Click(System::Object^ sender, System::EventArgs^ e) {
+	Interface::ModifierArticle^ modifierArticle = gcnew Interface::ModifierArticle();
+	modifierArticle->ShowDialog();
 }
 };
 }

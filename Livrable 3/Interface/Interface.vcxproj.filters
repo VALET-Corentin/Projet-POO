@@ -66,6 +66,33 @@
     <ClCompile Include="ServiceClient.cpp">
       <Filter>SQL.cpp</Filter>
     </ClCompile>
+    <ClCompile Include="AddArticle.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ListeClient.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ServiceArticle.cpp">
+      <Filter>SQL.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ListeArticle.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ModifierArticle.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ServicePersonnel.cpp">
+      <Filter>SQL.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="AddPersonnel.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ListePersonnel.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ModifierPersonnel.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -112,6 +139,33 @@
     </ClInclude>
     <ClInclude Include="ServicesClient.h">
       <Filter>SQL.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ServicesArticle.h">
+      <Filter>SQL.h</Filter>
+    </ClInclude>
+    <ClInclude Include="AddArticle.h">
+      <Filter>Form.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ListeClient.h">
+      <Filter>Form.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ListeArticle.h">
+      <Filter>Form.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ModifierArticle.h">
+      <Filter>Form.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ServicesPersonnel.h">
+      <Filter>SQL.h</Filter>
+    </ClInclude>
+    <ClInclude Include="AddPersonnel.h">
+      <Filter>Form.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ListePersonnel.h">
+      <Filter>Form.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ModifierPersonnel.h">
+      <Filter>Form.h</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

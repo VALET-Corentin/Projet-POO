@@ -1,4 +1,5 @@
 #pragma once
+#include "ModifierArticle.h"
 
 namespace Interface {
 
@@ -78,6 +79,7 @@ namespace Interface {
 			this->button_listecommande->Text = L"Liste des commandes";
 			this->button_listecommande->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->button_listecommande->UseVisualStyleBackColor = false;
+			this->button_listecommande->Click += gcnew System::EventHandler(this, &Commande::button_listecommande_Click);
 			// 
 			// button1
 			// 
@@ -97,6 +99,7 @@ namespace Interface {
 			this->button1->Text = L"Supprimer une commande";
 			this->button1->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &Commande::button1_Click);
 			// 
 			// button2
 			// 
@@ -116,6 +119,7 @@ namespace Interface {
 			this->button2->Text = L"Modifier une commande";
 			this->button2->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &Commande::button2_Click);
 			// 
 			// button3
 			// 
@@ -135,6 +139,7 @@ namespace Interface {
 			this->button3->Text = L"Ajouter une commande";
 			this->button3->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &Commande::button3_Click);
 			// 
 			// Commande
 			// 
@@ -154,5 +159,14 @@ namespace Interface {
 
 		}
 #pragma endregion
-	};
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button_listecommande_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }

@@ -1,4 +1,6 @@
 #pragma once
+#include "MAP.h"
+#include "ServicesArticle.h"
 
 namespace Interface {
 
@@ -30,7 +32,7 @@ namespace Interface {
 	public:
 
 
-	private: System::Windows::Forms::TextBox^ textBoxphut;
+	private: System::Windows::Forms::TextBox^ textBoxpuht;
 	private: System::Windows::Forms::TextBox^ textBoxquantité;
 
 
@@ -38,7 +40,7 @@ namespace Interface {
 	private: System::Windows::Forms::Label^ labelarticlenature;
 	private: System::Windows::Forms::Label^ labelarticlequantité;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ labelarticlephut;
+	private: System::Windows::Forms::Label^ labelarticlepuht;
 	private: System::Windows::Forms::Button^ buttonvalider;
 	private: System::Windows::Forms::Label^ labelnom;
 
@@ -69,7 +71,7 @@ namespace Interface {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -83,13 +85,13 @@ namespace Interface {
 			this->textBoxnom = (gcnew System::Windows::Forms::TextBox());
 			this->textBoxnature = (gcnew System::Windows::Forms::TextBox());
 			this->textBoxseuil = (gcnew System::Windows::Forms::TextBox());
-			this->textBoxphut = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxpuht = (gcnew System::Windows::Forms::TextBox());
 			this->textBoxquantité = (gcnew System::Windows::Forms::TextBox());
 			this->labelnnamearticle = (gcnew System::Windows::Forms::Label());
 			this->labelarticlenature = (gcnew System::Windows::Forms::Label());
 			this->labelarticlequantité = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->labelarticlephut = (gcnew System::Windows::Forms::Label());
+			this->labelarticlepuht = (gcnew System::Windows::Forms::Label());
 			this->buttonvalider = (gcnew System::Windows::Forms::Button());
 			this->labelnom = (gcnew System::Windows::Forms::Label());
 			this->labelstokage = (gcnew System::Windows::Forms::Label());
@@ -102,9 +104,9 @@ namespace Interface {
 			this->panelmove1->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->panelmove1->Controls->Add(this->X);
 			this->panelmove1->Location = System::Drawing::Point(0, 1);
-			this->panelmove1->Margin = System::Windows::Forms::Padding(2);
+			this->panelmove1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panelmove1->Name = L"panelmove1";
-			this->panelmove1->Size = System::Drawing::Size(793, 32);
+			this->panelmove1->Size = System::Drawing::Size(1057, 39);
 			this->panelmove1->TabIndex = 15;
 			this->panelmove1->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &AddArticle::panelmove1_MouseDown);
 			this->panelmove1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &AddArticle::panelmove1_MouseMove);
@@ -116,10 +118,10 @@ namespace Interface {
 			this->X->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->X->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)));
-			this->X->Location = System::Drawing::Point(765, 0);
-			this->X->Margin = System::Windows::Forms::Padding(2);
+			this->X->Location = System::Drawing::Point(1020, 0);
+			this->X->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->X->Name = L"X";
-			this->X->Size = System::Drawing::Size(28, 32);
+			this->X->Size = System::Drawing::Size(37, 39);
 			this->X->TabIndex = 1;
 			this->X->Text = L"X";
 			this->X->UseVisualStyleBackColor = false;
@@ -129,37 +131,42 @@ namespace Interface {
 			// 
 			// textBoxnom
 			// 
-			this->textBoxnom->Location = System::Drawing::Point(121, 101);
+			this->textBoxnom->Location = System::Drawing::Point(161, 124);
+			this->textBoxnom->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxnom->Name = L"textBoxnom";
-			this->textBoxnom->Size = System::Drawing::Size(154, 20);
+			this->textBoxnom->Size = System::Drawing::Size(204, 22);
 			this->textBoxnom->TabIndex = 16;
 			// 
 			// textBoxnature
 			// 
-			this->textBoxnature->Location = System::Drawing::Point(121, 143);
+			this->textBoxnature->Location = System::Drawing::Point(161, 176);
+			this->textBoxnature->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxnature->Name = L"textBoxnature";
-			this->textBoxnature->Size = System::Drawing::Size(154, 20);
+			this->textBoxnature->Size = System::Drawing::Size(204, 22);
 			this->textBoxnature->TabIndex = 17;
 			// 
 			// textBoxseuil
 			// 
-			this->textBoxseuil->Location = System::Drawing::Point(373, 309);
+			this->textBoxseuil->Location = System::Drawing::Point(497, 380);
+			this->textBoxseuil->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxseuil->Name = L"textBoxseuil";
-			this->textBoxseuil->Size = System::Drawing::Size(100, 20);
+			this->textBoxseuil->Size = System::Drawing::Size(132, 22);
 			this->textBoxseuil->TabIndex = 19;
 			// 
-			// textBoxphut
+			// textBoxpuht
 			// 
-			this->textBoxphut->Location = System::Drawing::Point(593, 101);
-			this->textBoxphut->Name = L"textBoxphut";
-			this->textBoxphut->Size = System::Drawing::Size(100, 20);
-			this->textBoxphut->TabIndex = 18;
+			this->textBoxpuht->Location = System::Drawing::Point(791, 124);
+			this->textBoxpuht->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxpuht->Name = L"textBoxpuht";
+			this->textBoxpuht->Size = System::Drawing::Size(132, 22);
+			this->textBoxpuht->TabIndex = 18;
 			// 
 			// textBoxquantité
 			// 
-			this->textBoxquantité->Location = System::Drawing::Point(373, 259);
+			this->textBoxquantité->Location = System::Drawing::Point(497, 319);
+			this->textBoxquantité->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxquantité->Name = L"textBoxquantité";
-			this->textBoxquantité->Size = System::Drawing::Size(100, 20);
+			this->textBoxquantité->Size = System::Drawing::Size(132, 22);
 			this->textBoxquantité->TabIndex = 20;
 			// 
 			// labelnnamearticle
@@ -169,8 +176,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labelnnamearticle->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelnnamearticle->Location = System::Drawing::Point(56, 96);
-			this->labelnnamearticle->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelnnamearticle->Location = System::Drawing::Point(75, 118);
 			this->labelnnamearticle->Name = L"labelnnamearticle";
 			this->labelnnamearticle->Size = System::Drawing::Size(53, 25);
 			this->labelnnamearticle->TabIndex = 22;
@@ -183,8 +189,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labelarticlenature->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelarticlenature->Location = System::Drawing::Point(46, 138);
-			this->labelarticlenature->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelarticlenature->Location = System::Drawing::Point(61, 170);
 			this->labelarticlenature->Name = L"labelarticlenature";
 			this->labelarticlenature->Size = System::Drawing::Size(70, 25);
 			this->labelarticlenature->TabIndex = 23;
@@ -198,8 +203,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labelarticlequantité->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelarticlequantité->Location = System::Drawing::Point(271, 253);
-			this->labelarticlequantité->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelarticlequantité->Location = System::Drawing::Point(361, 311);
 			this->labelarticlequantité->Name = L"labelarticlequantité";
 			this->labelarticlequantité->Size = System::Drawing::Size(85, 25);
 			this->labelarticlequantité->TabIndex = 24;
@@ -213,26 +217,24 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->label1->Location = System::Drawing::Point(92, 303);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(123, 373);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(264, 25);
 			this->label1->TabIndex = 25;
 			this->label1->Text = L"Seuil de réapprovisionnement";
 			// 
-			// labelarticlephut
+			// labelarticlepuht
 			// 
-			this->labelarticlephut->AutoSize = true;
-			this->labelarticlephut->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelarticlepuht->AutoSize = true;
+			this->labelarticlepuht->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelarticlephut->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
+			this->labelarticlepuht->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelarticlephut->Location = System::Drawing::Point(529, 94);
-			this->labelarticlephut->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->labelarticlephut->Name = L"labelarticlephut";
-			this->labelarticlephut->Size = System::Drawing::Size(59, 25);
-			this->labelarticlephut->TabIndex = 26;
-			this->labelarticlephut->Text = L"PHUT";
+			this->labelarticlepuht->Location = System::Drawing::Point(705, 116);
+			this->labelarticlepuht->Name = L"labelarticlepuht";
+			this->labelarticlepuht->Size = System::Drawing::Size(59, 25);
+			this->labelarticlepuht->TabIndex = 26;
+			this->labelarticlepuht->Text = L"PUHT";
 			// 
 			// buttonvalider
 			// 
@@ -241,10 +243,10 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->buttonvalider->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->buttonvalider->Location = System::Drawing::Point(324, 398);
-			this->buttonvalider->Margin = System::Windows::Forms::Padding(2);
+			this->buttonvalider->Location = System::Drawing::Point(432, 490);
+			this->buttonvalider->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonvalider->Name = L"buttonvalider";
-			this->buttonvalider->Size = System::Drawing::Size(127, 41);
+			this->buttonvalider->Size = System::Drawing::Size(169, 50);
 			this->buttonvalider->TabIndex = 27;
 			this->buttonvalider->Text = L"Valider";
 			this->buttonvalider->UseVisualStyleBackColor = true;
@@ -257,8 +259,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labelnom->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelnom->Location = System::Drawing::Point(130, 53);
-			this->labelnom->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelnom->Location = System::Drawing::Point(173, 65);
 			this->labelnom->Name = L"labelnom";
 			this->labelnom->Size = System::Drawing::Size(56, 25);
 			this->labelnom->TabIndex = 28;
@@ -271,8 +272,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labelstokage->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelstokage->Location = System::Drawing::Point(338, 203);
-			this->labelstokage->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelstokage->Location = System::Drawing::Point(451, 250);
 			this->labelstokage->Name = L"labelstokage";
 			this->labelstokage->Size = System::Drawing::Size(84, 25);
 			this->labelstokage->TabIndex = 29;
@@ -285,8 +285,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labelfinancier->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelfinancier->Location = System::Drawing::Point(575, 52);
-			this->labelfinancier->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelfinancier->Location = System::Drawing::Point(767, 64);
 			this->labelfinancier->Name = L"labelfinancier";
 			this->labelfinancier->Size = System::Drawing::Size(93, 25);
 			this->labelfinancier->TabIndex = 30;
@@ -294,27 +293,28 @@ namespace Interface {
 			// 
 			// AddArticle
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)));
-			this->ClientSize = System::Drawing::Size(793, 478);
+			this->ClientSize = System::Drawing::Size(1057, 588);
 			this->Controls->Add(this->labelfinancier);
 			this->Controls->Add(this->labelstokage);
 			this->Controls->Add(this->labelnom);
 			this->Controls->Add(this->buttonvalider);
-			this->Controls->Add(this->labelarticlephut);
+			this->Controls->Add(this->labelarticlepuht);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->labelarticlequantité);
 			this->Controls->Add(this->labelarticlenature);
 			this->Controls->Add(this->labelnnamearticle);
 			this->Controls->Add(this->textBoxquantité);
 			this->Controls->Add(this->textBoxseuil);
-			this->Controls->Add(this->textBoxphut);
+			this->Controls->Add(this->textBoxpuht);
 			this->Controls->Add(this->textBoxnature);
 			this->Controls->Add(this->textBoxnom);
 			this->Controls->Add(this->panelmove1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"AddArticle";
 			this->Text = L"AddArticle";
 			this->panelmove1->ResumeLayout(false);
@@ -358,10 +358,23 @@ namespace Interface {
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void labelarticlequantité_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void buttonvalider_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
-};
+	private: System::Void labelarticlequantité_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void buttonvalider_Click(System::Object^ sender, System::EventArgs^ e) {
+		servicesarticle^ oservicesarticle = gcnew servicesarticle();
+		CLarticle^ oarticle = gcnew CLarticle();
+		CAD^ connection = gcnew CAD();
+
+
+		oarticle->setArticlenom(textBoxnom->Text);
+		oarticle->setArticlequantite(textBoxquantité->Text);
+		oarticle->setArticlepuht(textBoxpuht->Text);
+		oarticle->setArticlenature(textBoxnature->Text);
+		oarticle->setArticleseuilreapprovisionnement(textBoxseuil->Text);
+
+		oservicesarticle->setoMap(oarticle);
+		oservicesarticle->insererarticle(oarticle);
+		this->Close();
+	}
+	};
 }

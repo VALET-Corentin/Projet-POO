@@ -122,26 +122,41 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Accueil.cpp" />
+    <ClCompile Include="AddArticle.cpp" />
     <ClCompile Include="AddClient.cpp" />
+    <ClCompile Include="AddPersonnel.cpp" />
     <ClCompile Include="Assemblyinfo.cpp" />
     <ClCompile Include="CAD.cpp" />
     <ClCompile Include="Catalogue.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Comptabilite.cpp" />
+    <ClCompile Include="ListeArticle.cpp" />
+    <ClCompile Include="ListeClient.cpp" />
+    <ClCompile Include="ListePersonnel.cpp" />
     <ClCompile Include="MAP.cpp" />
+    <ClCompile Include="ModifierArticle.cpp" />
+    <ClCompile Include="ModifierPersonnel.cpp" />
     <ClCompile Include="MonEspace.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Personnel.cpp" />
+    <ClCompile Include="ServiceArticle.cpp" />
     <ClCompile Include="ServiceClient.cpp" />
+    <ClCompile Include="ServicePersonnel.cpp" />
     <ClCompile Include="SuppClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Accueil.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="AddArticle.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="AddClient.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AddPersonnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CAD.h" />
@@ -157,7 +172,22 @@
     <ClInclude Include="Comptabilite.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ListeArticle.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ListeClient.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ListePersonnel.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MAP.h" />
+    <ClInclude Include="ModifierArticle.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModifierPersonnel.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MonEspace.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -169,7 +199,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Ressource.h" />
+    <ClInclude Include="ServicesArticle.h" />
     <ClInclude Include="ServicesClient.h" />
+    <ClInclude Include="ServicesPersonnel.h" />
     <ClInclude Include="SuppClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -177,6 +209,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddArticle.resx">
+      <DependentUpon>AddArticle.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddClient.resx">
       <DependentUpon>AddClient.h</DependentUpon>

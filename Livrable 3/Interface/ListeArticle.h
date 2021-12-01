@@ -45,7 +45,7 @@ namespace Interface {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -137,9 +137,9 @@ namespace Interface {
 
 		}
 #pragma endregion
-private: System::Void X_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
+	private: System::Void X_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
 	private: System::Void X_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 		this->X->BackColor = Color::FromArgb(221, 25, 23);
 	}
@@ -170,5 +170,5 @@ private: System::Void X_Click(System::Object^ sender, System::EventArgs^ e) {
 	{
 		dragFormMouseMove(sender, e);
 	}
-};
+	};
 }

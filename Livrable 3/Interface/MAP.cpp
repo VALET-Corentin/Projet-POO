@@ -1,33 +1,5 @@
 #include "pch.h"
 #include "MAP.h"
-
-//====================  Classe MAP ==================== 
-/*
-MAP::MAP()
-{
-
-}
-
-System::String^ MAP::Select(String^ a,String^ table, String^ column, String^ para)
-{
-    return "select " + a + " from " + table + " where " + column + " = '" + para + "';";
-}
-
-System::String^ MAP::Insert(String^ table,String^ column, String^ a)
-{
-    return "insert into " + table +" ("+column+") values('"+a+"'); ";
-}
-
-System::String^ MAP::Delete(String^ table, String^ column, String^ para)
-{
-    return "delete from " + table + " where " + column + " = '" + para + "';";
-}
-
-System::String^ MAP::Update(String^ table, String^ column, String^ a, String^ column2, String^ para)
-{
-    return "update " + table + " set " + column + " = '" + a + "' where " + column2 + " = '" + para + "';";
-}
-*/
 //#---Classe Personne ---#
 
 int CLpersonne::getIdpersonne()
@@ -92,12 +64,12 @@ void CLpersonnel::setIdadresse(int idadresse)
     id_adresse = idadresse;
 }
 
-int CLpersonnel::getIdpersonnelEstgere()
+String^ CLpersonnel::getIdpersonnelEstgere()
 {
     return id_personnel_Est_gere;
 }
 
-void CLpersonnel::setIdpersonnelEstgere(int idpersonnelEstgere)
+void CLpersonnel::setIdpersonnelEstgere(String^ idpersonnelEstgere)
 {
     id_personnel_Est_gere = idpersonnelEstgere;
 }
@@ -110,6 +82,26 @@ System::String^ CLpersonnel::getPersonneldateembauche()
 void CLpersonnel::setPersonneldateembauche(System::String^ personneldateembauche)
 {
     personnel_date_embauche = personneldateembauche;
+}
+
+String^ CLpersonnel::Select()
+{
+    return "select * from Personnel ";
+}
+
+String^ CLpersonnel::Insert()
+{
+    return "insert into Personnel (personnel_nom,personnel_prenom,personnel_date_embauche,personnel_adresse_mail,personnel_numero_telephone,id_personnel_Est_gere) values('" + this->nom + "','" + this->prenom + "','" + this->personnel_date_embauche + "','" + this->adresse_mail + "','" + this->numero_telephone + "','" + this->id_personnel_Est_gere + "');";
+}
+
+String^ CLpersonnel::Delete()
+{
+    return "delete from Personnel where id_client=" + this->id_personne + ";";
+}
+
+String^ CLpersonnel::Update()
+{
+    return "";
 }
 
 //#---Classe Client ---#
@@ -133,22 +125,27 @@ void CLclient::setClientdatepremierachat(System::String^ clientdatepremierachat)
 {
     client_date_premier_achat = clientdatepremierachat;
 }
+
 String^ CLclient::Select()
 {
     return "select * from Client ";
 }
+
 String^ CLclient::Insert()
 {
-    return "insert into Client ('client_nom','client_prenom','client_date_naissance','client_date_premier_achat','client_adresse_mail','client_numero_telephone') values('" + this->nom + "','" + this->prenom + "','" + this->client_date_naissance + "','" + this->client_date_premier_achat + "','" + adresse_mail + "','" + numero_telephone + "');";
+    return "insert into Client (client_nom,client_prenom,client_date_naissance,client_date_premier_achat,client_adresse_mail,client_numero_telephone) values('" + this->nom + "','" + this->prenom + "','" + this->client_date_naissance + "','" + this->client_date_premier_achat + "','" + this->adresse_mail + "','" + this->numero_telephone + "');";
 }
+
 String^ CLclient::Delete()
 {
     return "delete from Client where id_client=" + this->id_personne + ";";
 }
+
 String^ CLclient::Update()
 {
     return "";
 }
+
 //#---Classe Facture ---#
 
 int CLfacture::getIdfacture()
@@ -212,6 +209,16 @@ int CLpaiement::getIdarticle()
 void CLpaiement::setIdarticle(int idarticle)
 {
     id_article = idarticle;
+}
+
+int CLpaiement::getIdfacture()
+{
+    return id_facture;
+}
+
+void CLpaiement::setIdfacture(int idfacture)
+{
+    id_facture = idfacture;
 }
 
 System::String^ CLpaiement::getDatepaiement()
@@ -316,6 +323,27 @@ void CLarticle::setArticleseuilreapprovisionnement(System::String^ articleseuilr
     article_seuil_reapprovisionnement = articleseuilreapprovisionnement;
 }
 
+String^ CLarticle::Select()
+{
+    return "select * from Article ";
+}
+
+String^ CLarticle::Insert()
+{
+    return "insert into Article (article_nom,article_quantite,article_puht,article_nature,artcile_seuil_reapprovisionnement) values('" + this->article_nom + "','" + this->article_quantite + "','" + this->article_puht + "','" + this->article_nature + "','" + this->article_seuil_reapprovisionnement + "');";
+}
+
+String^ CLarticle::Delete()
+{
+    return "delete from Client where id_client=" + this->id_article + ";";
+}
+
+String^ CLarticle::Update()
+{
+    return "";
+}
+
+
 //#---Classe Commande ---#
 
 
@@ -337,6 +365,26 @@ int CLcommande::getTotalarticles()
 void CLcommande::setTotalarticles(int totalarticles)
 {
     total_articles = totalarticles;
+}
+
+int CLcommande::getIdclient()
+{
+    return id_client;
+}
+
+void CLcommande::setIdclient(int idclient)
+{
+    id_client = idclient;
+}
+
+int CLcommande::getIdfacture()
+{
+    return id_facture;
+}
+
+void CLcommande::setIdfacture(int idfacture)
+{
+    id_facture = idfacture;
 }
 
 System::String^ CLcommande::getRefcommande()
@@ -401,6 +449,16 @@ void CLcommande::setMontanttotalttc(float montanttotalttc)
 
 //#---Classe Ville ---#
 
+int CLville::getIdville()
+{
+    return id_ville;
+}
+
+void CLville::setIdville(int idville)
+{
+    id_ville = idville;
+}
+
 System::String^ CLville::getVille()
 {
     return ville;
@@ -418,7 +476,7 @@ System::String^ CLville::getCodepostal()
 
 void CLville::setCodepostal(System::String^ codepostal)
 {
-    code_postal = codepostal;
+    this->code_postal = codepostal;
 }
 
 System::String^ CLville::getPays()
@@ -429,6 +487,14 @@ System::String^ CLville::getPays()
 void CLville::setPays(System::String^ pays)
 {
     this->pays = pays;
+}
+int CLville::getid_ville()
+{
+    return this->id_ville;
+}
+void CLville::setid_ville(int id)
+{
+    this->id_ville= id;
 }
 
 //#---Classe Livre ---#
@@ -473,6 +539,16 @@ int CLadresse::getIdadresse()
 void CLadresse::setIdadresse(int idadresse)
 {
     id_adresse = idadresse;
+}
+
+int CLadresse::getIdville()
+{
+    return id_ville;
+}
+
+void CLadresse::setIdville(int idville)
+{
+    id_ville = idville;
 }
 
 System::String^ CLadresse::getNumerorue()

@@ -1,4 +1,5 @@
 #pragma once
+#include "AddPersonnel.h"
 
 namespace Interface {
 
@@ -74,13 +75,15 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->btn_addpersonnel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->btn_addpersonnel->Location = System::Drawing::Point(76, 46);
+			this->btn_addpersonnel->Location = System::Drawing::Point(57, 37);
+			this->btn_addpersonnel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btn_addpersonnel->Name = L"btn_addpersonnel";
-			this->btn_addpersonnel->Size = System::Drawing::Size(292, 181);
+			this->btn_addpersonnel->Size = System::Drawing::Size(219, 147);
 			this->btn_addpersonnel->TabIndex = 14;
 			this->btn_addpersonnel->Text = L"Ajouter un personnel";
 			this->btn_addpersonnel->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->btn_addpersonnel->UseVisualStyleBackColor = false;
+			this->btn_addpersonnel->Click += gcnew System::EventHandler(this, &Personnel::btn_addpersonnel_Click);
 			// 
 			// btn_supppersonnel
 			// 
@@ -93,9 +96,10 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->btn_supppersonnel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->btn_supppersonnel->Location = System::Drawing::Point(542, 46);
+			this->btn_supppersonnel->Location = System::Drawing::Point(406, 37);
+			this->btn_supppersonnel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btn_supppersonnel->Name = L"btn_supppersonnel";
-			this->btn_supppersonnel->Size = System::Drawing::Size(292, 181);
+			this->btn_supppersonnel->Size = System::Drawing::Size(219, 147);
 			this->btn_supppersonnel->TabIndex = 15;
 			this->btn_supppersonnel->Text = L"Supprimer un personnel";
 			this->btn_supppersonnel->TextAlign = System::Drawing::ContentAlignment::TopCenter;
@@ -112,9 +116,10 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->btn_editpersonnel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->btn_editpersonnel->Location = System::Drawing::Point(76, 289);
+			this->btn_editpersonnel->Location = System::Drawing::Point(57, 235);
+			this->btn_editpersonnel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btn_editpersonnel->Name = L"btn_editpersonnel";
-			this->btn_editpersonnel->Size = System::Drawing::Size(292, 181);
+			this->btn_editpersonnel->Size = System::Drawing::Size(219, 147);
 			this->btn_editpersonnel->TabIndex = 16;
 			this->btn_editpersonnel->Text = L"Modifier un personnel";
 			this->btn_editpersonnel->TextAlign = System::Drawing::ContentAlignment::TopCenter;
@@ -131,9 +136,10 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->btn_listpersonnel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->btn_listpersonnel->Location = System::Drawing::Point(542, 289);
+			this->btn_listpersonnel->Location = System::Drawing::Point(406, 235);
+			this->btn_listpersonnel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btn_listpersonnel->Name = L"btn_listpersonnel";
-			this->btn_listpersonnel->Size = System::Drawing::Size(292, 181);
+			this->btn_listpersonnel->Size = System::Drawing::Size(219, 147);
 			this->btn_listpersonnel->TabIndex = 17;
 			this->btn_listpersonnel->Text = L"Liste du personnel";
 			this->btn_listpersonnel->TextAlign = System::Drawing::ContentAlignment::TopCenter;
@@ -141,21 +147,26 @@ namespace Interface {
 			// 
 			// Personnel
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)));
-			this->ClientSize = System::Drawing::Size(934, 504);
+			this->ClientSize = System::Drawing::Size(700, 410);
 			this->Controls->Add(this->btn_listpersonnel);
 			this->Controls->Add(this->btn_editpersonnel);
 			this->Controls->Add(this->btn_supppersonnel);
 			this->Controls->Add(this->btn_addpersonnel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"Personnel";
 			this->Text = L"Personnel";
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	};
+	private: System::Void btn_addpersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
+		Interface::AddPersonnel^ addpersonnelFrm = gcnew Interface::AddPersonnel();
+		addpersonnelFrm->ShowDialog();
+	}
+};
 }

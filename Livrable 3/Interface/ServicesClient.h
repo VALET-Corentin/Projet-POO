@@ -18,7 +18,6 @@ public:
     void setoCad(CAD^);
     CAD^ getoCad(void);
 
-    //void ajouterUnePersonne(System::String^, System::String^);
-    //void supprimerPersonne(int^);
+
 
 };

@@ -25,7 +25,10 @@ void  servicesclient::insererclient(CLclient^ client)
 
 void servicesclient::supprimerclient(CLclient^ client)
 {
-
+    String^ sql;
+    this->oMap= client;
+    sql = this->oMap->Delete();
+    this->oCad->actionRows(sql);
 }
 
 void servicesclient::modifierclient(CLclient^ client)

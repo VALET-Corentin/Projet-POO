@@ -4,7 +4,7 @@
 
 CAD::CAD(void)
 {
-	this->chainecon = "Data Source=LAPTOP-OUHMHNOM\\SQLEXPRESS;Initial Catalog=DB_Proj;Integrated Security=True";
+	this->chainecon = "Data Source=LAPTOP-J0DFQRK5\\MSSQL;Initial Catalog=PROJET_POO2;Integrated Security=True";
 
 	this->requete = "Rien";
 

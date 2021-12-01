@@ -1,14 +1,5 @@
 #pragma once
-/*ref class MAP
-{
-public:
-    MAP();
-     System::String^ Select(System::String^, System::String^, System::String^, System::String^);
-     System::String^ Insert(System::String^, System::String^, System::String^);
-     System::String^ Delete(System::String^, System::String^, System::String^);
-     System::String^ Update(System::String^, System::String^, System::String^, System::String^, System::String^);
-};
-*/
+
 //#---Classe Personne ---#
 
 ref class CLpersonne
@@ -49,23 +40,22 @@ ref class CLpersonnel : public CLpersonne
 private:
 
     int id_adresse;
-    int id_personnel_Est_gere;
+    System::String^ id_personnel_Est_gere;
     System::String^ personnel_date_embauche;
 
 public:
     int getIdadresse();
     void setIdadresse(int idadresse);
 
-    int getIdpersonnelEstgere();
-    void setIdpersonnelEstgere(int idpersonnelEstgere);
+    System::String^ getIdpersonnelEstgere();
+    void setIdpersonnelEstgere(System::String^ idpersonnelEstgere);
 
     System::String^ getPersonneldateembauche();
     void setPersonneldateembauche(System::String^ personneldateembauche);
-   // System::String^ Select() override;
-    //System::String^ Insert() override;
-    //System::String^ Delete() override;
-    //System::String^ Update() override;
-
+    System::String^ Select() override;
+    System::String^ Insert() override;
+    System::String^ Delete() override;
+    System::String^ Update() override;
 };
 
 //#---Classe Client ---#
@@ -128,6 +118,7 @@ ref class CLpaiement
 private:
 
     int id_article;
+    int id_facture;
     System::String^ date_paiement;
     System::String^ date_reglement;
     System::String^ moyen_paiement;
@@ -136,6 +127,9 @@ private:
 public:
     int getIdarticle();
     void setIdarticle(int idarticle);
+
+    int getIdfacture();
+    void setIdfacture(int idfacture);
 
     System::String^ getDatepaiement();
     void setDatepaiement(System::String^ datepaiement);
@@ -183,6 +177,10 @@ public:
     System::String^ getArticleseuilreapprovisionnement();
     void setArticleseuilreapprovisionnement(System::String^ articleseuilreapprovisionnement);
 
+    System::String^ Select() override;
+    System::String^ Insert() override;
+    System::String^ Delete() override;
+    System::String^ Update() override;
 };
 
 //#---Classe Commande ---#
@@ -193,6 +191,8 @@ private:
 
     int id_commande;
     int total_articles;
+    int id_client;
+    int id_facture;
     System::String^ ref_commande;
     System::String^ date_livraison;
     System::String^ date_emission;
@@ -206,6 +206,12 @@ public:
 
     int getTotalarticles();
     void setTotalarticles(int totalarticles);
+
+    int getIdclient();
+    void setIdclient(int idclient);
+
+    int getIdfacture();
+    void setIdfacture(int idfacture);
 
     System::String^ getRefcommande();
     void setRefcommande(System::String^ refcommande);
@@ -232,12 +238,16 @@ public:
 ref class CLville
 {
 private:
+    int id_ville;
 
     System::String^ ville;
     System::String^ code_postal;
     System::String^ pays;
 
 public:
+    int getIdville();
+    void setIdville(int idville);
+
     System::String^ getVille();
     void setVille(System::String^ ville);
 
@@ -247,6 +257,8 @@ public:
     System::String^ getPays();
     void setPays(System::String^ pays);
 
+    int getid_ville();
+    void setid_ville(int id);
 };
 
 //#---Classe Livre ---#
@@ -278,6 +290,7 @@ ref class CLadresse
 private:
 
     int id_adresse;
+    int id_ville;
     System::String^ numero_rue;
     System::String^ nom_rue;
     System::String^ ville;
@@ -285,6 +298,9 @@ private:
 public:
     int getIdadresse();
     void setIdadresse(int idadresse);
+
+    int getIdville();
+    void setIdville(int idville);
 
     System::String^ getNumerorue();
     void setNumerorue(System::String^ numerorue);
