@@ -42,8 +42,8 @@ namespace Interface {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ labeladdpersonnem;
 	private: System::Windows::Forms::Button^ buttoncreer;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ textBox7;
+
+
 	private: System::Windows::Forms::Label^ Adresse;
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::TextBox^ textBoxadresszipcode;
@@ -105,8 +105,6 @@ namespace Interface {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->labeladdpersonnem = (gcnew System::Windows::Forms::Label());
 			this->buttoncreer = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->Adresse = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->textBoxadresszipcode = (gcnew System::Windows::Forms::TextBox());
@@ -151,21 +149,21 @@ namespace Interface {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(330, 186);
+			this->textBox1->Location = System::Drawing::Point(330, 193);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(100, 20);
 			this->textBox1->TabIndex = 28;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(330, 91);
+			this->textBox2->Location = System::Drawing::Point(330, 98);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(100, 20);
 			this->textBox2->TabIndex = 29;
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(330, 279);
+			this->textBox3->Location = System::Drawing::Point(330, 254);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(133, 20);
 			this->textBox3->TabIndex = 30;
@@ -173,21 +171,21 @@ namespace Interface {
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(330, 247);
+			this->textBox4->Location = System::Drawing::Point(330, 222);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(133, 20);
 			this->textBox4->TabIndex = 33;
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(330, 122);
+			this->textBox5->Location = System::Drawing::Point(330, 129);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(100, 20);
 			this->textBox5->TabIndex = 32;
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(330, 153);
+			this->textBox6->Location = System::Drawing::Point(330, 160);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(100, 20);
 			this->textBox6->TabIndex = 31;
@@ -199,7 +197,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labeldateembauche->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labeldateembauche->Location = System::Drawing::Point(166, 242);
+			this->labeldateembauche->Location = System::Drawing::Point(166, 217);
 			this->labeldateembauche->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labeldateembauche->Name = L"labeldateembauche";
 			this->labeldateembauche->Size = System::Drawing::Size(159, 25);
@@ -213,7 +211,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labelsupperieur->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelsupperieur->Location = System::Drawing::Point(82, 273);
+			this->labelsupperieur->Location = System::Drawing::Point(82, 248);
 			this->labelsupperieur->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelsupperieur->Name = L"labelsupperieur";
 			this->labelsupperieur->Size = System::Drawing::Size(232, 25);
@@ -228,7 +226,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labelprenom->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelprenom->Location = System::Drawing::Point(247, 116);
+			this->labelprenom->Location = System::Drawing::Point(247, 123);
 			this->labelprenom->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelprenom->Name = L"labelprenom";
 			this->labelprenom->Size = System::Drawing::Size(78, 25);
@@ -242,7 +240,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labelmail->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelmail->Location = System::Drawing::Point(206, 148);
+			this->labelmail->Location = System::Drawing::Point(206, 155);
 			this->labelmail->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelmail->Name = L"labelmail";
 			this->labelmail->Size = System::Drawing::Size(119, 25);
@@ -256,7 +254,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labeltelephone->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labeltelephone->Location = System::Drawing::Point(226, 180);
+			this->labeltelephone->Location = System::Drawing::Point(226, 187);
 			this->labeltelephone->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labeltelephone->Name = L"labeltelephone";
 			this->labeltelephone->Size = System::Drawing::Size(99, 25);
@@ -270,7 +268,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->label5->Location = System::Drawing::Point(261, 86);
+			this->label5->Location = System::Drawing::Point(261, 93);
 			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(53, 25);
@@ -306,27 +304,6 @@ namespace Interface {
 			this->buttoncreer->Text = L"Créer";
 			this->buttoncreer->UseVisualStyleBackColor = true;
 			this->buttoncreer->Click += gcnew System::EventHandler(this, &AddPersonnel::buttoncreer_Click);
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
-				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->label1->Location = System::Drawing::Point(236, 209);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(78, 25);
-			this->label1->TabIndex = 48;
-			this->label1->Text = L"Adresse";
-			// 
-			// textBox7
-			// 
-			this->textBox7->Location = System::Drawing::Point(330, 215);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(133, 20);
-			this->textBox7->TabIndex = 47;
 			// 
 			// Adresse
 			// 
@@ -446,8 +423,6 @@ namespace Interface {
 			this->Controls->Add(this->textBoxaddressenumber);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBoxaddressstreetname);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->textBox7);
 			this->Controls->Add(this->buttoncreer);
 			this->Controls->Add(this->labeladdpersonnem);
 			this->Controls->Add(this->label5);
