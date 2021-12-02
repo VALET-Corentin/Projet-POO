@@ -1,4 +1,4 @@
-#include "MyForm.h"
+#include "Connexion.h"
 
 
 using namespace System;
@@ -11,6 +11,6 @@ void Main(array<String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
     //Interface is your project name
-    Interface::MyForm form;
+    Interface::Connexion form;
     Application::Run(% form);
 }
