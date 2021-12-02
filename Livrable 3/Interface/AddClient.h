@@ -1,6 +1,7 @@
 #pragma once
 #include "MAP.h"
 #include "ServicesClient.h"
+#include "ServicesVille.h"
 namespace Interface {
 
 	using namespace System;
@@ -42,7 +43,7 @@ namespace Interface {
 	private: System::Windows::Forms::TextBox^ textBoxaddressenumber;
 
 	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::TextBox^ textBoxaddresscity;
+
 
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::TextBox^ textBoxadresszipcode;
@@ -52,6 +53,8 @@ namespace Interface {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Button^ Valider;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::Button^ button1;
 
 
 	private:
@@ -114,13 +117,14 @@ namespace Interface {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->textBoxaddressenumber = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->textBoxaddresscity = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->textBoxadresszipcode = (gcnew System::Windows::Forms::TextBox());
 			this->Adresse = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->Valider = (gcnew System::Windows::Forms::Button());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panelmove1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -174,6 +178,7 @@ namespace Interface {
 			this->panelmove1->Name = L"panelmove1";
 			this->panelmove1->Size = System::Drawing::Size(1057, 39);
 			this->panelmove1->TabIndex = 13;
+			this->panelmove1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &AddClient::panelmove1_Paint);
 			this->panelmove1->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &AddClient::panelmove1_MouseDown);
 			this->panelmove1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &AddClient::panelmove1_MouseMove);
 			// 
@@ -315,13 +320,6 @@ namespace Interface {
 			this->label7->TabIndex = 25;
 			this->label7->Text = L"Ville";
 			// 
-			// textBoxaddresscity
-			// 
-			this->textBoxaddresscity->Location = System::Drawing::Point(620, 463);
-			this->textBoxaddresscity->Name = L"textBoxaddresscity";
-			this->textBoxaddresscity->Size = System::Drawing::Size(100, 22);
-			this->textBoxaddresscity->TabIndex = 24;
-			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
@@ -394,6 +392,25 @@ namespace Interface {
 			this->Valider->UseVisualStyleBackColor = true;
 			this->Valider->Click += gcnew System::EventHandler(this, &AddClient::Valide_Click);
 			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(620, 461);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(121, 24);
+			this->comboBox1->TabIndex = 32;
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &AddClient::comboBox1_SelectedIndexChanged);
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(620, 512);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 33;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &AddClient::button1_Click);
+			// 
 			// AddClient
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -401,6 +418,8 @@ namespace Interface {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)));
 			this->ClientSize = System::Drawing::Size(1057, 588);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->Valider);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label1);
@@ -408,7 +427,6 @@ namespace Interface {
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->textBoxadresszipcode);
 			this->Controls->Add(this->label7);
-			this->Controls->Add(this->textBoxaddresscity);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->textBoxaddressenumber);
 			this->Controls->Add(this->label5);
@@ -427,6 +445,7 @@ namespace Interface {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"AddClient";
 			this->Text = L"AddClient";
+			this->Load += gcnew System::EventHandler(this, &AddClient::AddClient_Load);
 			this->panelmove1->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -493,7 +512,7 @@ namespace Interface {
 		servicesclient^ oservicesclient = gcnew servicesclient();
 		CLclient^ oclient = gcnew CLclient();
 		CAD^ connection = gcnew CAD();
-
+		oservicesclient->setoCad(connection);
 
 		oclient->setNom(textBoxsurname->Text);
 		oclient->setPrenom(textBoxname->Text);
@@ -510,11 +529,29 @@ namespace Interface {
 
 		oservicesclient->setoMap(oclient);
 		oservicesclient->insererclient(oclient);
-		this->Close();
+		
 	}
 	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void AddClient_Load(System::Object^ sender, System::EventArgs^ e) {
+	
+}
+private: System::Void panelmove1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	servicesville^ oservicesville = gcnew servicesville();
+	CLville^ oville = gcnew CLville();
+	CAD^ connection = gcnew CAD();
+
+	
+	comboBox1->ValueMember = "ville";
+	comboBox1->DataSource = oservicesville->selectionnerville("ville");
+	oservicesville->setoCad(connection);
+	
+}
+};
 }
 
 

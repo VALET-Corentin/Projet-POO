@@ -497,6 +497,16 @@ void CLville::setid_ville(int id)
     this->id_ville= id;
 }
 
+System::String^ CLville::Select()
+{
+    return "select * from ville ";
+}
+/*System::String^ CLville::Insert()
+{
+
+}*/
+
+
 //#---Classe Livre ---#
 
 int CLlivre::getIdadresse()

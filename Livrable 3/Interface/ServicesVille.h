@@ -18,7 +18,4 @@ public:
     void setoCad(CAD^);
     CAD^ getoCad(void);
 
-    //void ajouterUneVille(System::String^, System::String^);
-    //void supprimerVille(int^);
-
 };
