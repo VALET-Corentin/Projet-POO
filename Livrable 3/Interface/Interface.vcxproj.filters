@@ -63,38 +63,50 @@
     <ClCompile Include="MAP.cpp">
       <Filter>SQL.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="ServicesClient.cpp">
+    <ClCompile Include="ServiceClient.cpp">
       <Filter>SQL.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="AddArticle.cpp">
-      <Filter>Forms.cpp</Filter>
     </ClCompile>
     <ClCompile Include="ListeClient.cpp">
       <Filter>Forms.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="ServicesArticle.cpp">
-      <Filter>SQL.cpp</Filter>
+    <ClCompile Include="AddArticle.cpp">
+      <Filter>Forms.cpp</Filter>
     </ClCompile>
     <ClCompile Include="ListeArticle.cpp">
       <Filter>Forms.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="ModifierArticle.cpp">
-      <Filter>Forms.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="ServicesPersonnel.cpp">
-      <Filter>SQL.cpp</Filter>
-    </ClCompile>
     <ClCompile Include="AddPersonnel.cpp">
       <Filter>Forms.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="ListePersonnel.cpp">
+    <ClCompile Include="SuppPersonnel.cpp">
       <Filter>Forms.cpp</Filter>
     </ClCompile>
     <ClCompile Include="ModifierPersonnel.cpp">
       <Filter>Forms.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="ServicesVille.cpp">
-      <Filter>SQL.cpp</Filter>
+    <ClCompile Include="ModifierArticle.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ListePersonnel.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Facture.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="AddCommande.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="SuppCommande.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ListeCommande.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Connexion.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ProduitManquant.cpp">
+      <Filter>Forms.cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -143,13 +155,10 @@
     <ClInclude Include="ServicesClient.h">
       <Filter>SQL.h</Filter>
     </ClInclude>
-    <ClInclude Include="ServicesArticle.h">
-      <Filter>SQL.h</Filter>
-    </ClInclude>
-    <ClInclude Include="AddArticle.h">
+    <ClInclude Include="ListeClient.h">
       <Filter>Form.h</Filter>
     </ClInclude>
-    <ClInclude Include="ListeClient.h">
+    <ClInclude Include="AddArticle.h">
       <Filter>Form.h</Filter>
     </ClInclude>
     <ClInclude Include="ListeArticle.h">
@@ -158,20 +167,35 @@
     <ClInclude Include="ModifierArticle.h">
       <Filter>Form.h</Filter>
     </ClInclude>
-    <ClInclude Include="ServicesPersonnel.h">
-      <Filter>SQL.h</Filter>
-    </ClInclude>
     <ClInclude Include="AddPersonnel.h">
-      <Filter>Form.h</Filter>
-    </ClInclude>
-    <ClInclude Include="ListePersonnel.h">
       <Filter>Form.h</Filter>
     </ClInclude>
     <ClInclude Include="ModifierPersonnel.h">
       <Filter>Form.h</Filter>
     </ClInclude>
-    <ClInclude Include="ServicesVille.h">
-      <Filter>SQL.h</Filter>
+    <ClInclude Include="SuppPersonnel.h">
+      <Filter>Form.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ListePersonnel.h">
+      <Filter>Form.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Facture.h">
+      <Filter>Form.h</Filter>
+    </ClInclude>
+    <ClInclude Include="AddCommande.h">
+      <Filter>Form.h</Filter>
+    </ClInclude>
+    <ClInclude Include="SuppCommande.h">
+      <Filter>Form.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ListeCommande.h">
+      <Filter>Form.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ProduitManquant.h">
+      <Filter>Form.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Connexion.h">
+      <Filter>Form.h</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

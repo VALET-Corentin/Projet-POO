@@ -77,7 +77,7 @@ namespace Interface {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container^ components;
+		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -420,8 +420,8 @@ namespace Interface {
 #pragma endregion
 	private: System::Void ModifierArticle_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void labelarticlephut_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
+private: System::Void labelarticlephut_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 	private: System::Void X_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
@@ -455,5 +455,5 @@ namespace Interface {
 	{
 		dragFormMouseMove(sender, e);
 	}
-	};
+};
 }
