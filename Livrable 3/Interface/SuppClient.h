@@ -309,15 +309,6 @@ private: System::Void X_MouseLeave(System::Object^ sender, System::EventArgs^ e)
 	{
 		dragFormMouseMove(sender, e);
 	}
-	/*private: System::Void buttonsupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
-		servicesclient^ oservicesclient = gcnew servicesclient();
-		CLclient^ oclient = gcnew CLclient();
-		CAD^ connection = gcnew CAD();
 
-		oclient->
-
-		oservicesclient->setoMap(oclient);
-		oservicesclient->supprimerclient(oclient);
-		this->Close();*/
 };
 }

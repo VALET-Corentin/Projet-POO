@@ -50,7 +50,7 @@ namespace Interface {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container^ components;
+		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -107,6 +107,7 @@ namespace Interface {
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(771, 341);
 			this->dataGridView1->TabIndex = 16;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ListeClient::dataGridView1_CellContentClick);
 			// 
 			// buttonactualiser
 			// 
@@ -179,5 +180,7 @@ namespace Interface {
 
 	private: System::Void buttonactualiser_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+};
 }

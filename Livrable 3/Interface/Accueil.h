@@ -1,5 +1,4 @@
 #pragma once
-#include "AddClient.h"
 
 namespace Interface {
 
@@ -76,10 +75,9 @@ namespace Interface {
 			this->btn_facture->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Bold));
 			this->btn_facture->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->btn_facture->Location = System::Drawing::Point(406, 235);
-			this->btn_facture->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_facture->Location = System::Drawing::Point(542, 289);
 			this->btn_facture->Name = L"btn_facture";
-			this->btn_facture->Size = System::Drawing::Size(219, 147);
+			this->btn_facture->Size = System::Drawing::Size(292, 181);
 			this->btn_facture->TabIndex = 20;
 			this->btn_facture->Text = L"Facture";
 			this->btn_facture->TextAlign = System::Drawing::ContentAlignment::TopCenter;
@@ -95,10 +93,9 @@ namespace Interface {
 			this->btn_produitmanquant->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Bold));
 			this->btn_produitmanquant->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->btn_produitmanquant->Location = System::Drawing::Point(57, 235);
-			this->btn_produitmanquant->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_produitmanquant->Location = System::Drawing::Point(76, 289);
 			this->btn_produitmanquant->Name = L"btn_produitmanquant";
-			this->btn_produitmanquant->Size = System::Drawing::Size(219, 147);
+			this->btn_produitmanquant->Size = System::Drawing::Size(292, 181);
 			this->btn_produitmanquant->TabIndex = 19;
 			this->btn_produitmanquant->Text = L"Produits manquants";
 			this->btn_produitmanquant->TextAlign = System::Drawing::ContentAlignment::TopCenter;
@@ -114,10 +111,9 @@ namespace Interface {
 			this->btn_commandeencours->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Bold));
 			this->btn_commandeencours->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->btn_commandeencours->Location = System::Drawing::Point(406, 37);
-			this->btn_commandeencours->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_commandeencours->Location = System::Drawing::Point(542, 46);
 			this->btn_commandeencours->Name = L"btn_commandeencours";
-			this->btn_commandeencours->Size = System::Drawing::Size(219, 147);
+			this->btn_commandeencours->Size = System::Drawing::Size(292, 181);
 			this->btn_commandeencours->TabIndex = 18;
 			this->btn_commandeencours->Text = L"Commande en cours";
 			this->btn_commandeencours->TextAlign = System::Drawing::ContentAlignment::TopCenter;
@@ -135,38 +131,31 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->btn_addclient->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->btn_addclient->Location = System::Drawing::Point(57, 37);
-			this->btn_addclient->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_addclient->Location = System::Drawing::Point(76, 46);
 			this->btn_addclient->Name = L"btn_addclient";
-			this->btn_addclient->Size = System::Drawing::Size(219, 147);
+			this->btn_addclient->Size = System::Drawing::Size(292, 181);
 			this->btn_addclient->TabIndex = 17;
 			this->btn_addclient->Text = L"Ajouter un client";
 			this->btn_addclient->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->btn_addclient->UseVisualStyleBackColor = false;
-			this->btn_addclient->Click += gcnew System::EventHandler(this, &Accueil::btn_addclient_Click);
 			// 
 			// Accueil
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)));
-			this->ClientSize = System::Drawing::Size(700, 410);
+			this->ClientSize = System::Drawing::Size(934, 504);
 			this->Controls->Add(this->btn_facture);
 			this->Controls->Add(this->btn_produitmanquant);
 			this->Controls->Add(this->btn_commandeencours);
 			this->Controls->Add(this->btn_addclient);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"Accueil";
 			this->Text = L"Accueil";
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void btn_addclient_Click(System::Object^ sender, System::EventArgs^ e) {
-		Interface::AddClient^ addclientFrm = gcnew Interface::AddClient();
-		addclientFrm->ShowDialog();
-	}
-};
+	};
 }

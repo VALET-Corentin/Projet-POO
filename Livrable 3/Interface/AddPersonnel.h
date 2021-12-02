@@ -1,6 +1,4 @@
 #pragma once
-#include "MAP.h"
-#include "ServicesPersonnel.h"
 
 namespace Interface {
 
@@ -44,17 +42,28 @@ namespace Interface {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ labeladdpersonnem;
 	private: System::Windows::Forms::Button^ buttoncreer;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::ComboBox^ comboBoxcodepostal;
+	private: System::Windows::Forms::ComboBox^ comboBoxpays;
+	private: System::Windows::Forms::Label^ labelPays;
+	private: System::Windows::Forms::ComboBox^ comboBoxville;
 	private: System::Windows::Forms::Label^ Adresse;
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ textBoxadresszipcode;
 	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::TextBox^ textBoxaddresscity;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::TextBox^ textBoxaddressenumber;
-	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ textBoxaddressstreetname;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -82,7 +91,7 @@ namespace Interface {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container^ components;
+		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -107,16 +116,16 @@ namespace Interface {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->labeladdpersonnem = (gcnew System::Windows::Forms::Label());
 			this->buttoncreer = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->comboBoxcodepostal = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBoxpays = (gcnew System::Windows::Forms::ComboBox());
+			this->labelPays = (gcnew System::Windows::Forms::Label());
+			this->comboBoxville = (gcnew System::Windows::Forms::ComboBox());
 			this->Adresse = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBoxadresszipcode = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->textBoxaddresscity = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->textBoxaddressenumber = (gcnew System::Windows::Forms::TextBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBoxaddressstreetname = (gcnew System::Windows::Forms::TextBox());
 			this->panelmove1->SuspendLayout();
 			this->SuspendLayout();
@@ -153,21 +162,21 @@ namespace Interface {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(330, 186);
+			this->textBox1->Location = System::Drawing::Point(330, 193);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(100, 20);
 			this->textBox1->TabIndex = 28;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(330, 91);
+			this->textBox2->Location = System::Drawing::Point(330, 98);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(100, 20);
 			this->textBox2->TabIndex = 29;
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(330, 279);
+			this->textBox3->Location = System::Drawing::Point(330, 254);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(133, 20);
 			this->textBox3->TabIndex = 30;
@@ -175,21 +184,21 @@ namespace Interface {
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(330, 247);
+			this->textBox4->Location = System::Drawing::Point(330, 222);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(133, 20);
 			this->textBox4->TabIndex = 33;
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(330, 122);
+			this->textBox5->Location = System::Drawing::Point(330, 129);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(100, 20);
 			this->textBox5->TabIndex = 32;
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(330, 153);
+			this->textBox6->Location = System::Drawing::Point(330, 160);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(100, 20);
 			this->textBox6->TabIndex = 31;
@@ -201,7 +210,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labeldateembauche->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labeldateembauche->Location = System::Drawing::Point(166, 242);
+			this->labeldateembauche->Location = System::Drawing::Point(166, 217);
 			this->labeldateembauche->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labeldateembauche->Name = L"labeldateembauche";
 			this->labeldateembauche->Size = System::Drawing::Size(159, 25);
@@ -215,7 +224,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labelsupperieur->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelsupperieur->Location = System::Drawing::Point(82, 273);
+			this->labelsupperieur->Location = System::Drawing::Point(82, 248);
 			this->labelsupperieur->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelsupperieur->Name = L"labelsupperieur";
 			this->labelsupperieur->Size = System::Drawing::Size(232, 25);
@@ -230,7 +239,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labelprenom->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelprenom->Location = System::Drawing::Point(247, 116);
+			this->labelprenom->Location = System::Drawing::Point(247, 123);
 			this->labelprenom->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelprenom->Name = L"labelprenom";
 			this->labelprenom->Size = System::Drawing::Size(78, 25);
@@ -244,7 +253,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labelmail->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelmail->Location = System::Drawing::Point(206, 148);
+			this->labelmail->Location = System::Drawing::Point(206, 155);
 			this->labelmail->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelmail->Name = L"labelmail";
 			this->labelmail->Size = System::Drawing::Size(119, 25);
@@ -258,7 +267,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labeltelephone->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labeltelephone->Location = System::Drawing::Point(226, 180);
+			this->labeltelephone->Location = System::Drawing::Point(226, 187);
 			this->labeltelephone->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labeltelephone->Name = L"labeltelephone";
 			this->labeltelephone->Size = System::Drawing::Size(99, 25);
@@ -272,7 +281,7 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->label5->Location = System::Drawing::Point(261, 86);
+			this->label5->Location = System::Drawing::Point(261, 93);
 			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(53, 25);
@@ -309,26 +318,85 @@ namespace Interface {
 			this->buttoncreer->UseVisualStyleBackColor = true;
 			this->buttoncreer->Click += gcnew System::EventHandler(this, &AddPersonnel::buttoncreer_Click);
 			// 
-			// label1
+			// comboBoxcodepostal
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->comboBoxcodepostal->FormattingEnabled = true;
+			this->comboBoxcodepostal->Items->AddRange(gcnew cli::array< System::Object^  >(100) {
+				L"Paris", L"Marseille", L"Lyon", L"Toulouse",
+					L"Nice", L"Nantes", L"Strasbourg", L"Montpellier", L"Bordeaux", L"Lille", L"Rennes", L"Reims", L"Le Havre", L"Saint-Étienne",
+					L"Toulon", L"Grenoble", L"Angers", L"Dijon", L"Brest", L"Le Mans", L"Nîmes", L"Aix-en-Provence", L"Clermont-Ferrand", L"Tours",
+					L"Amiens", L"Limoges", L"Villeurbanne", L"Metz", L"Besançon", L"Perpignan", L"Orléans", L"Caen", L"Mulhouse", L"Boulogne-Billancourt",
+					L"Rouen", L"Nancy", L"Argenteuil", L"Montreuil", L"Saint-Denis", L"Roubaix", L"Avignon", L"Tourcoing", L"Poitiers", L"Nanterre",
+					L"Créteil", L"Versailles", L"Pau", L"Courbevoie", L"Vitry-sur-Seine", L"Asnières-sur-Seine", L"Colombes", L"Aulnay-sous-Bois",
+					L"La Rochelle", L"Rueil-Malmaison", L"Antibes", L"Saint-Maur-des-Fossés", L"Calais", L"Champigny-sur-Marne", L"Aubervilliers",
+					L"Béziers", L"Bourges", L"Cannes", L"Saint-Nazaire", L"Dunkerque", L"Quimper", L"Valence", L"Colmar", L"Drancy", L"Mérignac",
+					L"Ajaccio", L"Levallois-Perret", L"Troyes", L"Neuilly-sur-Seine", L"Issy-les-Moulineaux", L"Villeneuve-d\'Ascq", L"Noisy-le-Grand",
+					L"Antony", L"Niort", L"Lorient", L"Sarcelles", L"Chambéry", L"Saint-Quentin", L"Pessac", L"Vénissieux", L"Cergy", L"La Seyne-sur-Mer",
+					L"Clichy", L"Beauvais", L"Cholet", L"Hyères", L"Ivry-sur-Seine", L"Montauban", L"Vannes", L"La Roche-sur-Yon", L"Charleville-Mézières",
+					L"Pantin", L"Laval", L"Maisons-Alfort", L"Bondy", L"Évry"
+			});
+			this->comboBoxcodepostal->Location = System::Drawing::Point(544, 377);
+			this->comboBoxcodepostal->Name = L"comboBoxcodepostal";
+			this->comboBoxcodepostal->Size = System::Drawing::Size(90, 21);
+			this->comboBoxcodepostal->TabIndex = 57;
+			// 
+			// comboBoxpays
+			// 
+			this->comboBoxpays->FormattingEnabled = true;
+			this->comboBoxpays->Items->AddRange(gcnew cli::array< System::Object^  >(100) {
+				L"Paris", L"Marseille", L"Lyon", L"Toulouse",
+					L"Nice", L"Nantes", L"Strasbourg", L"Montpellier", L"Bordeaux", L"Lille", L"Rennes", L"Reims", L"Le Havre", L"Saint-Étienne",
+					L"Toulon", L"Grenoble", L"Angers", L"Dijon", L"Brest", L"Le Mans", L"Nîmes", L"Aix-en-Provence", L"Clermont-Ferrand", L"Tours",
+					L"Amiens", L"Limoges", L"Villeurbanne", L"Metz", L"Besançon", L"Perpignan", L"Orléans", L"Caen", L"Mulhouse", L"Boulogne-Billancourt",
+					L"Rouen", L"Nancy", L"Argenteuil", L"Montreuil", L"Saint-Denis", L"Roubaix", L"Avignon", L"Tourcoing", L"Poitiers", L"Nanterre",
+					L"Créteil", L"Versailles", L"Pau", L"Courbevoie", L"Vitry-sur-Seine", L"Asnières-sur-Seine", L"Colombes", L"Aulnay-sous-Bois",
+					L"La Rochelle", L"Rueil-Malmaison", L"Antibes", L"Saint-Maur-des-Fossés", L"Calais", L"Champigny-sur-Marne", L"Aubervilliers",
+					L"Béziers", L"Bourges", L"Cannes", L"Saint-Nazaire", L"Dunkerque", L"Quimper", L"Valence", L"Colmar", L"Drancy", L"Mérignac",
+					L"Ajaccio", L"Levallois-Perret", L"Troyes", L"Neuilly-sur-Seine", L"Issy-les-Moulineaux", L"Villeneuve-d\'Ascq", L"Noisy-le-Grand",
+					L"Antony", L"Niort", L"Lorient", L"Sarcelles", L"Chambéry", L"Saint-Quentin", L"Pessac", L"Vénissieux", L"Cergy", L"La Seyne-sur-Mer",
+					L"Clichy", L"Beauvais", L"Cholet", L"Hyères", L"Ivry-sur-Seine", L"Montauban", L"Vannes", L"La Roche-sur-Yon", L"Charleville-Mézières",
+					L"Pantin", L"Laval", L"Maisons-Alfort", L"Bondy", L"Évry"
+			});
+			this->comboBoxpays->Location = System::Drawing::Point(674, 377);
+			this->comboBoxpays->Name = L"comboBoxpays";
+			this->comboBoxpays->Size = System::Drawing::Size(112, 21);
+			this->comboBoxpays->TabIndex = 56;
+			// 
+			// labelPays
+			// 
+			this->labelPays->AutoSize = true;
+			this->labelPays->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+			this->labelPays->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->label1->Location = System::Drawing::Point(236, 209);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(78, 25);
-			this->label1->TabIndex = 48;
-			this->label1->Text = L"Adresse";
+			this->labelPays->Location = System::Drawing::Point(705, 338);
+			this->labelPays->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelPays->Name = L"labelPays";
+			this->labelPays->Size = System::Drawing::Size(49, 25);
+			this->labelPays->TabIndex = 55;
+			this->labelPays->Text = L"Pays";
 			// 
-			// textBox7
+			// comboBoxville
 			// 
-			this->textBox7->Location = System::Drawing::Point(330, 215);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(133, 20);
-			this->textBox7->TabIndex = 47;
+			this->comboBoxville->FormattingEnabled = true;
+			this->comboBoxville->Items->AddRange(gcnew cli::array< System::Object^  >(100) {
+				L"Paris", L"Marseille", L"Lyon", L"Toulouse",
+					L"Nice", L"Nantes", L"Strasbourg", L"Montpellier", L"Bordeaux", L"Lille", L"Rennes", L"Reims", L"Le Havre", L"Saint-Étienne",
+					L"Toulon", L"Grenoble", L"Angers", L"Dijon", L"Brest", L"Le Mans", L"Nîmes", L"Aix-en-Provence", L"Clermont-Ferrand", L"Tours",
+					L"Amiens", L"Limoges", L"Villeurbanne", L"Metz", L"Besançon", L"Perpignan", L"Orléans", L"Caen", L"Mulhouse", L"Boulogne-Billancourt",
+					L"Rouen", L"Nancy", L"Argenteuil", L"Montreuil", L"Saint-Denis", L"Roubaix", L"Avignon", L"Tourcoing", L"Poitiers", L"Nanterre",
+					L"Créteil", L"Versailles", L"Pau", L"Courbevoie", L"Vitry-sur-Seine", L"Asnières-sur-Seine", L"Colombes", L"Aulnay-sous-Bois",
+					L"La Rochelle", L"Rueil-Malmaison", L"Antibes", L"Saint-Maur-des-Fossés", L"Calais", L"Champigny-sur-Marne", L"Aubervilliers",
+					L"Béziers", L"Bourges", L"Cannes", L"Saint-Nazaire", L"Dunkerque", L"Quimper", L"Valence", L"Colmar", L"Drancy", L"Mérignac",
+					L"Ajaccio", L"Levallois-Perret", L"Troyes", L"Neuilly-sur-Seine", L"Issy-les-Moulineaux", L"Villeneuve-d\'Ascq", L"Noisy-le-Grand",
+					L"Antony", L"Niort", L"Lorient", L"Sarcelles", L"Chambéry", L"Saint-Quentin", L"Pessac", L"Vénissieux", L"Cergy", L"La Seyne-sur-Mer",
+					L"Clichy", L"Beauvais", L"Cholet", L"Hyères", L"Ivry-sur-Seine", L"Montauban", L"Vannes", L"La Roche-sur-Yon", L"Charleville-Mézières",
+					L"Pantin", L"Laval", L"Maisons-Alfort", L"Bondy", L"Évry"
+			});
+			this->comboBoxville->Location = System::Drawing::Point(385, 377);
+			this->comboBoxville->Name = L"comboBoxville";
+			this->comboBoxville->Size = System::Drawing::Size(121, 21);
+			this->comboBoxville->TabIndex = 54;
 			// 
 			// Adresse
 			// 
@@ -337,11 +405,11 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->Adresse->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->Adresse->Location = System::Drawing::Point(348, 313);
+			this->Adresse->Location = System::Drawing::Point(344, 302);
 			this->Adresse->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Adresse->Name = L"Adresse";
 			this->Adresse->Size = System::Drawing::Size(81, 25);
-			this->Adresse->TabIndex = 57;
+			this->Adresse->TabIndex = 53;
 			this->Adresse->Text = L"Adresse";
 			// 
 			// label8
@@ -351,20 +419,12 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->label8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->label8->Location = System::Drawing::Point(604, 349);
+			this->label8->Location = System::Drawing::Point(539, 338);
 			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(112, 25);
-			this->label8->TabIndex = 56;
+			this->label8->TabIndex = 52;
 			this->label8->Text = L"Code postal";
-			// 
-			// textBoxadresszipcode
-			// 
-			this->textBoxadresszipcode->Location = System::Drawing::Point(623, 388);
-			this->textBoxadresszipcode->Margin = System::Windows::Forms::Padding(2);
-			this->textBoxadresszipcode->Name = L"textBoxadresszipcode";
-			this->textBoxadresszipcode->Size = System::Drawing::Size(76, 20);
-			this->textBoxadresszipcode->TabIndex = 55;
 			// 
 			// label7
 			// 
@@ -373,20 +433,12 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->label7->Location = System::Drawing::Point(486, 349);
+			this->label7->Location = System::Drawing::Point(424, 338);
 			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(49, 25);
-			this->label7->TabIndex = 54;
+			this->label7->TabIndex = 51;
 			this->label7->Text = L"Ville";
-			// 
-			// textBoxaddresscity
-			// 
-			this->textBoxaddresscity->Location = System::Drawing::Point(473, 388);
-			this->textBoxaddresscity->Margin = System::Windows::Forms::Padding(2);
-			this->textBoxaddresscity->Name = L"textBoxaddresscity";
-			this->textBoxaddresscity->Size = System::Drawing::Size(76, 20);
-			this->textBoxaddresscity->TabIndex = 53;
 			// 
 			// label6
 			// 
@@ -395,42 +447,42 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->label6->Location = System::Drawing::Point(53, 349);
+			this->label6->Location = System::Drawing::Point(7, 338);
 			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(148, 25);
-			this->label6->TabIndex = 52;
+			this->label6->TabIndex = 50;
 			this->label6->Text = L"Numéros de rue";
 			// 
 			// textBoxaddressenumber
 			// 
-			this->textBoxaddressenumber->Location = System::Drawing::Point(73, 388);
+			this->textBoxaddressenumber->Location = System::Drawing::Point(27, 377);
 			this->textBoxaddressenumber->Margin = System::Windows::Forms::Padding(2);
 			this->textBoxaddressenumber->Name = L"textBoxaddressenumber";
 			this->textBoxaddressenumber->Size = System::Drawing::Size(93, 20);
-			this->textBoxaddressenumber->TabIndex = 51;
+			this->textBoxaddressenumber->TabIndex = 49;
 			// 
-			// label2
+			// label1
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->label2->Location = System::Drawing::Point(267, 349);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(112, 25);
-			this->label2->TabIndex = 50;
-			this->label2->Text = L"Nom de rue";
+			this->label1->Location = System::Drawing::Point(210, 338);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(112, 25);
+			this->label1->TabIndex = 48;
+			this->label1->Text = L"Nom de rue";
 			// 
 			// textBoxaddressstreetname
 			// 
-			this->textBoxaddressstreetname->Location = System::Drawing::Point(240, 388);
+			this->textBoxaddressstreetname->Location = System::Drawing::Point(183, 377);
 			this->textBoxaddressstreetname->Margin = System::Windows::Forms::Padding(2);
 			this->textBoxaddressstreetname->Name = L"textBoxaddressstreetname";
 			this->textBoxaddressstreetname->Size = System::Drawing::Size(160, 20);
-			this->textBoxaddressstreetname->TabIndex = 49;
+			this->textBoxaddressstreetname->TabIndex = 47;
 			// 
 			// AddPersonnel
 			// 
@@ -439,17 +491,17 @@ namespace Interface {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)));
 			this->ClientSize = System::Drawing::Size(793, 478);
+			this->Controls->Add(this->comboBoxcodepostal);
+			this->Controls->Add(this->comboBoxpays);
+			this->Controls->Add(this->labelPays);
+			this->Controls->Add(this->comboBoxville);
 			this->Controls->Add(this->Adresse);
 			this->Controls->Add(this->label8);
-			this->Controls->Add(this->textBoxadresszipcode);
 			this->Controls->Add(this->label7);
-			this->Controls->Add(this->textBoxaddresscity);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->textBoxaddressenumber);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->textBoxaddressstreetname);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->textBox7);
+			this->Controls->Add(this->textBoxaddressstreetname);
 			this->Controls->Add(this->buttoncreer);
 			this->Controls->Add(this->labeladdpersonnem);
 			this->Controls->Add(this->label5);
@@ -510,32 +562,18 @@ namespace Interface {
 	}
 	private: System::Void AddPersonnel_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void buttoncreer_Click(System::Object^ sender, System::EventArgs^ e) {
-		servicespersonnel^ oservicespersonnel = gcnew servicespersonnel();
-		CLpersonnel^ opersonnel = gcnew CLpersonnel();
-		CAD^ connection = gcnew CAD();
-
-
-		opersonnel->setNom(textBox2->Text);
-		opersonnel->setPrenom(textBox5->Text);
-		opersonnel->setAdressemail(textBox6->Text);
-		opersonnel->setNumerotelephone(textBox1->Text);
-		opersonnel->setPersonneldateembauche(textBox4->Text);
-		opersonnel->setIdpersonnelEstgere(textBox3->Text);
-		
-		oservicespersonnel->setoMap(opersonnel);
-		oservicespersonnel->insererpersonnel(opersonnel);
-		this->Close();
-	}
-	private: System::Void labelsupperieur_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	};
+private: System::Void buttoncreer_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+private: System::Void labelsupperieur_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }
