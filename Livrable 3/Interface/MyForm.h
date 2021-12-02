@@ -599,6 +599,7 @@ namespace Interface {
 	//Myform Load
 	//
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		Afficher(gcnew Interface::Accueil);
 	}
 
 	//
