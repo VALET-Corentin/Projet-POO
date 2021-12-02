@@ -63,7 +63,7 @@
     <ClCompile Include="MAP.cpp">
       <Filter>SQL.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="ServicesClient.cpp">
+    <ClCompile Include="ServiceClient.cpp">
       <Filter>SQL.cpp</Filter>
     </ClCompile>
     <ClCompile Include="AddArticle.cpp">
@@ -72,7 +72,7 @@
     <ClCompile Include="ListeClient.cpp">
       <Filter>Forms.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="ServicesArticle.cpp">
+    <ClCompile Include="ServiceArticle.cpp">
       <Filter>SQL.cpp</Filter>
     </ClCompile>
     <ClCompile Include="ListeArticle.cpp">
@@ -81,7 +81,7 @@
     <ClCompile Include="ModifierArticle.cpp">
       <Filter>Forms.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="ServicesPersonnel.cpp">
+    <ClCompile Include="ServicePersonnel.cpp">
       <Filter>SQL.cpp</Filter>
     </ClCompile>
     <ClCompile Include="AddPersonnel.cpp">
@@ -92,9 +92,6 @@
     </ClCompile>
     <ClCompile Include="ModifierPersonnel.cpp">
       <Filter>Forms.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="ServicesVille.cpp">
-      <Filter>SQL.cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -169,9 +166,6 @@
     </ClInclude>
     <ClInclude Include="ModifierPersonnel.h">
       <Filter>Form.h</Filter>
-    </ClInclude>
-    <ClInclude Include="ServicesVille.h">
-      <Filter>SQL.h</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -141,10 +141,9 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Personnel.cpp" />
-    <ClCompile Include="ServicesArticle.cpp" />
-    <ClCompile Include="ServicesClient.cpp" />
-    <ClCompile Include="ServicesPersonnel.cpp" />
-    <ClCompile Include="ServicesVille.cpp" />
+    <ClCompile Include="ServiceArticle.cpp" />
+    <ClCompile Include="ServiceClient.cpp" />
+    <ClCompile Include="ServicePersonnel.cpp" />
     <ClCompile Include="SuppClient.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -203,7 +202,6 @@
     <ClInclude Include="ServicesArticle.h" />
     <ClInclude Include="ServicesClient.h" />
     <ClInclude Include="ServicesPersonnel.h" />
-    <ClInclude Include="ServicesVille.h" />
     <ClInclude Include="SuppClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>

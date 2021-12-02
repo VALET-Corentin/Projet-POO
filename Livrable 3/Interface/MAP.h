@@ -259,8 +259,6 @@ public:
 
     int getid_ville();
     void setid_ville(int id);
-    System::String^ Select() ;
-    //System::String^ Insert() ;
 };
 
 //#---Classe Livre ---#
