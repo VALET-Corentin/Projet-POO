@@ -143,6 +143,7 @@
     <ClCompile Include="MAP.cpp" />
     <ClCompile Include="ModifierArticle.cpp" />
     <ClCompile Include="ModifierPersonnel.cpp" />
+    <ClCompile Include="Moinsvendus.cpp" />
     <ClCompile Include="MonEspace.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="pch.cpp" />
@@ -150,10 +151,14 @@
     <ClCompile Include="ProduitManquant.cpp" />
     <ClCompile Include="ServiceArticle.cpp" />
     <ClCompile Include="ServiceClient.cpp" />
+    <ClCompile Include="ServicesCommande.cpp" />
+    <ClCompile Include="ServicesPersonnel.cpp" />
     <ClCompile Include="ServicesVille.cpp" />
+    <ClCompile Include="SuppArticle.cpp" />
     <ClCompile Include="SuppClient.cpp" />
     <ClCompile Include="SuppCommande.cpp" />
     <ClCompile Include="SuppPersonnel.cpp" />
+    <ClCompile Include="Top10.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Accueil.h">
@@ -209,6 +214,9 @@
     <ClInclude Include="ModifierPersonnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Moinsvendus.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MonEspace.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -225,7 +233,12 @@
     <ClInclude Include="Ressource.h" />
     <ClInclude Include="ServicesArticle.h" />
     <ClInclude Include="ServicesClient.h" />
+    <ClInclude Include="ServicesCommande.h" />
+    <ClInclude Include="ServicesPersonnel.h" />
     <ClInclude Include="ServicesVille.h" />
+    <ClInclude Include="SuppArticle.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="SuppClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -233,6 +246,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="SuppPersonnel.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Top10.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -288,6 +304,9 @@
     <EmbeddedResource Include="ModifierPersonnel.resx">
       <DependentUpon>ModifierPersonnel.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Moinsvendus.resx">
+      <DependentUpon>Moinsvendus.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MonEspace.resx">
       <DependentUpon>MonEspace.h</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +319,9 @@
     <EmbeddedResource Include="ProduitManquant.resx">
       <DependentUpon>ProduitManquant.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SuppArticle.resx">
+      <DependentUpon>SuppArticle.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SuppClient.resx">
       <DependentUpon>SuppClient.h</DependentUpon>
     </EmbeddedResource>
@@ -308,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SuppPersonnel.resx">
       <DependentUpon>SuppPersonnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Top10.resx">
+      <DependentUpon>Top10.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

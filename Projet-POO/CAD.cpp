@@ -44,3 +44,16 @@ System::Data::SqlClient::SqlDataReader^ CAD::getDataReader(System::String^ sSql)
 	return DataReader;
 
 }
+
+System::Data::DataTable^ CAD::getDataTable(System::String^ sSql)
+{
+	this->requete = sSql;
+	this->command->CommandText = this->requete;
+	this->sDataAdapter->SelectCommand = this->command;
+	System::Data::DataTable^ table = gcnew System::Data::DataTable;
+	this->connection->Open();
+	sDataAdapter->Fill(table);
+	this->connection->Close();
+	return table;
+
+}

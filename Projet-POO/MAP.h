@@ -2,7 +2,7 @@
 
 //#---Classe Personne ---#
 
-ref class CLpersonne
+ref class CLpersonne abstract
 {
 protected:
     int id_personne;
@@ -52,6 +52,7 @@ public:
 
     System::String^ getPersonneldateembauche();
     void setPersonneldateembauche(System::String^ personneldateembauche);
+    
     System::String^ Select() override;
     System::String^ Insert() override;
     System::String^ Delete() override;
@@ -230,7 +231,12 @@ public:
 
     float getMontanttotalttc();
     void setMontanttotalttc(float montanttotalttc);
-
+    
+    System::String^ Select() override;
+    System::String^ Insert() override;
+    System::String^ Delete() override;
+    System::String^ Update() override;
+    
 };
 
 //#---Classe Ville ---#

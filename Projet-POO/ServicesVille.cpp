@@ -1,17 +1,19 @@
 #include "pch.h"
 #include "ServicesVille.h"
 
+
 servicesville::servicesville(void)
 {
     this->oCad = gcnew CAD();
     this->oMap = gcnew CLville();
 }
 
-DataSet^ servicesville::selectionnerville(String^ nomtable)
+DataTable^ servicesville::selectionnerville()
 {
     String^ sql;
     sql = this->oMap->Select();
-    return this->oCad->getRows(sql, nomtable);
+    return this->oCad->getDataTable(sql);
+
 }
 
 

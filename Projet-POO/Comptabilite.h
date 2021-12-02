@@ -1,4 +1,7 @@
 #pragma once
+#include "Top10.h"
+#include "Facture.h"
+#include "Moinsvendus.h"
 
 namespace Interface {
 
@@ -79,7 +82,7 @@ namespace Interface {
 			this->btn_chiffreaffaire->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->btn_chiffreaffaire->Location = System::Drawing::Point(57, 235);
-			this->btn_chiffreaffaire->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_chiffreaffaire->Margin = System::Windows::Forms::Padding(2);
 			this->btn_chiffreaffaire->Name = L"btn_chiffreaffaire";
 			this->btn_chiffreaffaire->Size = System::Drawing::Size(219, 147);
 			this->btn_chiffreaffaire->TabIndex = 17;
@@ -98,13 +101,14 @@ namespace Interface {
 			this->button_topvente->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->button_topvente->Location = System::Drawing::Point(406, 37);
-			this->button_topvente->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button_topvente->Margin = System::Windows::Forms::Padding(2);
 			this->button_topvente->Name = L"button_topvente";
 			this->button_topvente->Size = System::Drawing::Size(219, 147);
 			this->button_topvente->TabIndex = 18;
 			this->button_topvente->Text = L"Top Vente";
 			this->button_topvente->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->button_topvente->UseVisualStyleBackColor = false;
+			this->button_topvente->Click += gcnew System::EventHandler(this, &Comptabilite::button_topvente_Click);
 			// 
 			// button_moinvendu
 			// 
@@ -117,13 +121,14 @@ namespace Interface {
 			this->button_moinvendu->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->button_moinvendu->Location = System::Drawing::Point(57, 37);
-			this->button_moinvendu->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button_moinvendu->Margin = System::Windows::Forms::Padding(2);
 			this->button_moinvendu->Name = L"button_moinvendu";
 			this->button_moinvendu->Size = System::Drawing::Size(219, 147);
 			this->button_moinvendu->TabIndex = 19;
 			this->button_moinvendu->Text = L"Moins vendu";
 			this->button_moinvendu->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->button_moinvendu->UseVisualStyleBackColor = false;
+			this->button_moinvendu->Click += gcnew System::EventHandler(this, &Comptabilite::button_moinvendu_Click);
 			// 
 			// btn_facture
 			// 
@@ -143,6 +148,7 @@ namespace Interface {
 			this->btn_facture->Text = L"Facture";
 			this->btn_facture->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->btn_facture->UseVisualStyleBackColor = false;
+			this->btn_facture->Click += gcnew System::EventHandler(this, &Comptabilite::btn_facture_Click);
 			// 
 			// Comptabilite
 			// 
@@ -156,12 +162,24 @@ namespace Interface {
 			this->Controls->Add(this->button_topvente);
 			this->Controls->Add(this->btn_chiffreaffaire);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Comptabilite";
 			this->Text = L"Comptabilite";
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	};
+	private: System::Void button_topvente_Click(System::Object^ sender, System::EventArgs^ e) {
+		Interface::Top10^ top10Frm = gcnew Interface::Top10();
+		top10Frm->ShowDialog();
+	}
+private: System::Void btn_facture_Click(System::Object^ sender, System::EventArgs^ e) {
+	Interface::Facture^ factureFrm = gcnew Interface::Facture();
+	factureFrm->ShowDialog();
+}
+private: System::Void button_moinvendu_Click(System::Object^ sender, System::EventArgs^ e) {
+	Interface::Moinsvendus^ moinsvendusFrm = gcnew Interface::Moinsvendus();
+	moinsvendusFrm->ShowDialog();
+}
+};
 }

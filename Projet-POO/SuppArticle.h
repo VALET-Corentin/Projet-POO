@@ -1,6 +1,7 @@
 #pragma once
 #include "MAP.h"
-#include "ServicesCommande.h"
+#include "ServicesArticle.h"
+
 
 namespace Interface {
 
@@ -13,64 +14,63 @@ namespace Interface {
 	using namespace System::Data::SqlClient;
 
 	/// <summary>
-	/// Description résumée de SuppCommande
+	/// Description résumée de SuppArticle
 	/// </summary>
-	public ref class SuppCommande : public System::Windows::Forms::Form
+	public ref class SuppArticle : public System::Windows::Forms::Form
 	{
 	public:
-		SuppCommande(void)
+		SuppArticle(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
-	private: System::Windows::Forms::Label^ labelrecherche;
-	public:
-	private: System::Windows::Forms::Button^ buttonsupprimer;
-	private: System::Windows::Forms::Button^ buttonrechercher;
-	private: System::Windows::Forms::Label^ labelsupprimer;
-	private: System::Windows::Forms::Label^ nom;
-	private: System::Windows::Forms::Label^ labelnclient;
-	private: System::Windows::Forms::TextBox^ textBoxrefsuppcommande;
-
-	private: System::Windows::Forms::TextBox^ textBoxrefcommande;
-
-
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ id_commande;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ref_commande;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ date_livraison;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ date_emission;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ total_articles;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ montant_total_ht;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ montant_total_tva;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ montant_total_ttc;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ id_client;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ id_facture;
-
-
-
-
-
-
-	private:
-		Point PanelMouseDownLocation;
 
 	protected:
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~SuppCommande()
+		~SuppArticle()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Panel^ panelmove1;
+
 	protected:
+
+	private: System::Windows::Forms::Label^ labelrecherche;
+	private: System::Windows::Forms::Button^ buttonsupprimer;
+
+
+
+
+
+
+
+	private: System::Windows::Forms::Panel^ panelmove1;
 	private: System::Windows::Forms::Button^ X;
+	private: System::Windows::Forms::Button^ buttonrechercher;
+	private: System::Windows::Forms::Label^ labelsupprimer;
+	private: System::Windows::Forms::TextBox^ textBoxrefcommande;
+	private: System::Windows::Forms::Label^ nom;
+	private: System::Windows::Forms::TextBox^ textBoxrefsuppcommande;
+	private: System::Windows::Forms::Label^ labelnclient;
+
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+
+	private:
+		Point PanelMouseDownLocation;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ id_article;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ article_nom;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ article_quantite;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ article_puht;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ article_nature;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ article_seuil_reapprovisionnement;
 
 	private:
 		/// <summary>
@@ -85,42 +85,70 @@ namespace Interface {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->panelmove1 = (gcnew System::Windows::Forms::Panel());
-			this->X = (gcnew System::Windows::Forms::Button());
 			this->labelrecherche = (gcnew System::Windows::Forms::Label());
 			this->buttonsupprimer = (gcnew System::Windows::Forms::Button());
+			this->panelmove1 = (gcnew System::Windows::Forms::Panel());
+			this->X = (gcnew System::Windows::Forms::Button());
 			this->buttonrechercher = (gcnew System::Windows::Forms::Button());
 			this->labelsupprimer = (gcnew System::Windows::Forms::Label());
-			this->nom = (gcnew System::Windows::Forms::Label());
-			this->labelnclient = (gcnew System::Windows::Forms::Label());
-			this->textBoxrefsuppcommande = (gcnew System::Windows::Forms::TextBox());
 			this->textBoxrefcommande = (gcnew System::Windows::Forms::TextBox());
+			this->nom = (gcnew System::Windows::Forms::Label());
+			this->textBoxrefsuppcommande = (gcnew System::Windows::Forms::TextBox());
+			this->labelnclient = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->id_commande = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->ref_commande = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->date_livraison = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->date_emission = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->total_articles = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->montant_total_ht = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->montant_total_tva = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->montant_total_ttc = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->id_client = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->id_facture = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->id_article = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->article_nom = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->article_quantite = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->article_puht = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->article_nature = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->article_seuil_reapprovisionnement = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panelmove1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
+			// 
+			// labelrecherche
+			// 
+			this->labelrecherche->AutoSize = true;
+			this->labelrecherche->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelrecherche->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+				static_cast<System::Int32>(static_cast<System::Byte>(152)));
+			this->labelrecherche->Location = System::Drawing::Point(108, 51);
+			this->labelrecherche->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelrecherche->Name = L"labelrecherche";
+			this->labelrecherche->Size = System::Drawing::Size(101, 25);
+			this->labelrecherche->TabIndex = 46;
+			this->labelrecherche->Text = L"Recherche";
+			// 
+			// buttonsupprimer
+			// 
+			this->buttonsupprimer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonsupprimer->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonsupprimer->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+				static_cast<System::Int32>(static_cast<System::Byte>(152)));
+			this->buttonsupprimer->Location = System::Drawing::Point(655, 107);
+			this->buttonsupprimer->Margin = System::Windows::Forms::Padding(2);
+			this->buttonsupprimer->Name = L"buttonsupprimer";
+			this->buttonsupprimer->Size = System::Drawing::Size(127, 41);
+			this->buttonsupprimer->TabIndex = 45;
+			this->buttonsupprimer->Text = L"Supprimer";
+			this->buttonsupprimer->UseVisualStyleBackColor = true;
+			this->buttonsupprimer->Click += gcnew System::EventHandler(this, &SuppArticle::buttonsupprimer_Click);
 			// 
 			// panelmove1
 			// 
 			this->panelmove1->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->panelmove1->Controls->Add(this->X);
-			this->panelmove1->Location = System::Drawing::Point(0, 0);
+			this->panelmove1->Location = System::Drawing::Point(0, 1);
 			this->panelmove1->Margin = System::Windows::Forms::Padding(2);
 			this->panelmove1->Name = L"panelmove1";
 			this->panelmove1->Size = System::Drawing::Size(793, 32);
-			this->panelmove1->TabIndex = 15;
-			this->panelmove1->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &SuppCommande::panelmove1_MouseDown);
-			this->panelmove1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &SuppCommande::panelmove1_MouseMove);
+			this->panelmove1->TabIndex = 37;
+			this->panelmove1->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &SuppArticle::panelmove1_MouseDown);
+			this->panelmove1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &SuppArticle::panelmove1_MouseMove);
 			// 
 			// X
 			// 
@@ -136,39 +164,9 @@ namespace Interface {
 			this->X->TabIndex = 1;
 			this->X->Text = L"X";
 			this->X->UseVisualStyleBackColor = false;
-			this->X->Click += gcnew System::EventHandler(this, &SuppCommande::X_Click);
-			this->X->MouseEnter += gcnew System::EventHandler(this, &SuppCommande::X_MouseEnter);
-			this->X->MouseLeave += gcnew System::EventHandler(this, &SuppCommande::X_MouseLeave);
-			// 
-			// labelrecherche
-			// 
-			this->labelrecherche->AutoSize = true;
-			this->labelrecherche->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelrecherche->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
-				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelrecherche->Location = System::Drawing::Point(108, 50);
-			this->labelrecherche->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->labelrecherche->Name = L"labelrecherche";
-			this->labelrecherche->Size = System::Drawing::Size(101, 25);
-			this->labelrecherche->TabIndex = 36;
-			this->labelrecherche->Text = L"Recherche";
-			// 
-			// buttonsupprimer
-			// 
-			this->buttonsupprimer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->buttonsupprimer->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->buttonsupprimer->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
-				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->buttonsupprimer->Location = System::Drawing::Point(655, 106);
-			this->buttonsupprimer->Margin = System::Windows::Forms::Padding(2);
-			this->buttonsupprimer->Name = L"buttonsupprimer";
-			this->buttonsupprimer->Size = System::Drawing::Size(127, 41);
-			this->buttonsupprimer->TabIndex = 35;
-			this->buttonsupprimer->Text = L"Supprimer";
-			this->buttonsupprimer->UseVisualStyleBackColor = true;
-			this->buttonsupprimer->Click += gcnew System::EventHandler(this, &SuppCommande::buttonsupprimer_Click);
+			this->X->Click += gcnew System::EventHandler(this, &SuppArticle::X_Click);
+			this->X->MouseEnter += gcnew System::EventHandler(this, &SuppArticle::X_MouseEnter);
+			this->X->MouseLeave += gcnew System::EventHandler(this, &SuppArticle::X_MouseLeave);
 			// 
 			// buttonrechercher
 			// 
@@ -177,14 +175,14 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->buttonrechercher->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->buttonrechercher->Location = System::Drawing::Point(250, 106);
+			this->buttonrechercher->Location = System::Drawing::Point(250, 107);
 			this->buttonrechercher->Margin = System::Windows::Forms::Padding(2);
 			this->buttonrechercher->Name = L"buttonrechercher";
 			this->buttonrechercher->Size = System::Drawing::Size(127, 41);
-			this->buttonrechercher->TabIndex = 34;
+			this->buttonrechercher->TabIndex = 44;
 			this->buttonrechercher->Text = L"Rechercher";
 			this->buttonrechercher->UseVisualStyleBackColor = true;
-			this->buttonrechercher->Click += gcnew System::EventHandler(this, &SuppCommande::buttonrechercher_Click);
+			this->buttonrechercher->Click += gcnew System::EventHandler(this, &SuppArticle::buttonrechercher_Click);
 			// 
 			// labelsupprimer
 			// 
@@ -193,12 +191,20 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labelsupprimer->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelsupprimer->Location = System::Drawing::Point(506, 50);
+			this->labelsupprimer->Location = System::Drawing::Point(506, 51);
 			this->labelsupprimer->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelsupprimer->Name = L"labelsupprimer";
 			this->labelsupprimer->Size = System::Drawing::Size(122, 25);
-			this->labelsupprimer->TabIndex = 33;
+			this->labelsupprimer->TabIndex = 43;
 			this->labelsupprimer->Text = L"Suppression";
+			// 
+			// textBoxrefcommande
+			// 
+			this->textBoxrefcommande->Location = System::Drawing::Point(126, 88);
+			this->textBoxrefcommande->Margin = System::Windows::Forms::Padding(2);
+			this->textBoxrefcommande->Name = L"textBoxrefcommande";
+			this->textBoxrefcommande->Size = System::Drawing::Size(96, 20);
+			this->textBoxrefcommande->TabIndex = 39;
 			// 
 			// nom
 			// 
@@ -207,12 +213,21 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->nom->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->nom->Location = System::Drawing::Point(28, 114);
+			this->nom->Location = System::Drawing::Point(27, 82);
 			this->nom->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->nom->Name = L"nom";
-			this->nom->Size = System::Drawing::Size(95, 25);
-			this->nom->TabIndex = 32;
-			this->nom->Text = L"Référence";
+			this->nom->Size = System::Drawing::Size(53, 25);
+			this->nom->TabIndex = 42;
+			this->nom->Text = L"Nom";
+			this->nom->Click += gcnew System::EventHandler(this, &SuppArticle::nom_Click);
+			// 
+			// textBoxrefsuppcommande
+			// 
+			this->textBoxrefsuppcommande->Location = System::Drawing::Point(552, 120);
+			this->textBoxrefsuppcommande->Margin = System::Windows::Forms::Padding(2);
+			this->textBoxrefsuppcommande->Name = L"textBoxrefsuppcommande";
+			this->textBoxrefsuppcommande->Size = System::Drawing::Size(76, 20);
+			this->textBoxrefsuppcommande->TabIndex = 40;
 			// 
 			// labelnclient
 			// 
@@ -221,116 +236,102 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->labelnclient->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->labelnclient->Location = System::Drawing::Point(453, 114);
+			this->labelnclient->Location = System::Drawing::Point(453, 115);
 			this->labelnclient->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelnclient->Name = L"labelnclient";
-			this->labelnclient->Size = System::Drawing::Size(95, 25);
-			this->labelnclient->TabIndex = 30;
-			this->labelnclient->Text = L"Référence";
-			// 
-			// textBoxrefsuppcommande
-			// 
-			this->textBoxrefsuppcommande->Location = System::Drawing::Point(552, 119);
-			this->textBoxrefsuppcommande->Margin = System::Windows::Forms::Padding(2);
-			this->textBoxrefsuppcommande->Name = L"textBoxrefsuppcommande";
-			this->textBoxrefsuppcommande->Size = System::Drawing::Size(76, 20);
-			this->textBoxrefsuppcommande->TabIndex = 29;
-			// 
-			// textBoxrefcommande
-			// 
-			this->textBoxrefcommande->Location = System::Drawing::Point(127, 120);
-			this->textBoxrefcommande->Margin = System::Windows::Forms::Padding(2);
-			this->textBoxrefcommande->Name = L"textBoxrefcommande";
-			this->textBoxrefcommande->Size = System::Drawing::Size(96, 20);
-			this->textBoxrefcommande->TabIndex = 27;
+			this->labelnclient->Size = System::Drawing::Size(90, 25);
+			this->labelnclient->TabIndex = 41;
+			this->labelnclient->Text = L"Article n°";
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(10) {
-				this->id_commande,
-					this->ref_commande, this->date_livraison, this->date_emission, this->total_articles, this->montant_total_ht, this->montant_total_tva,
-					this->montant_total_ttc, this->id_client, this->id_facture
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
+				this->id_article,
+					this->article_nom, this->article_quantite, this->article_puht, this->article_nature, this->article_seuil_reapprovisionnement
 			});
-			this->dataGridView1->Location = System::Drawing::Point(54, 176);
+			this->dataGridView1->Location = System::Drawing::Point(54, 177);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(677, 291);
-			this->dataGridView1->TabIndex = 26;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &SuppCommande::dataGridView1_CellContentClick);
+			this->dataGridView1->TabIndex = 38;
 			// 
-			// id_commande
+			// id_article
 			// 
-			this->id_commande->HeaderText = L"id_commande";
-			this->id_commande->Name = L"id_commande";
+			this->id_article->HeaderText = L"id_article";
+			this->id_article->Name = L"id_article";
 			// 
-			// ref_commande
+			// article_nom
 			// 
-			this->ref_commande->HeaderText = L"ref_commande";
-			this->ref_commande->Name = L"ref_commande";
+			this->article_nom->HeaderText = L"article_nom";
+			this->article_nom->Name = L"article_nom";
 			// 
-			// date_livraison
+			// article_quantite
 			// 
-			this->date_livraison->HeaderText = L"date_livraison";
-			this->date_livraison->Name = L"date_livraison";
+			this->article_quantite->HeaderText = L"article_quantite";
+			this->article_quantite->Name = L"article_quantite";
 			// 
-			// date_emission
+			// article_puht
 			// 
-			this->date_emission->HeaderText = L"date_emission";
-			this->date_emission->Name = L"date_emission";
+			this->article_puht->HeaderText = L"article_puht";
+			this->article_puht->Name = L"article_puht";
 			// 
-			// total_articles
+			// article_nature
 			// 
-			this->total_articles->HeaderText = L"total_articles";
-			this->total_articles->Name = L"total_articles";
+			this->article_nature->HeaderText = L"article_nature";
+			this->article_nature->Name = L"article_nature";
 			// 
-			// montant_total_ht
+			// article_seuil_reapprovisionnement
 			// 
-			this->montant_total_ht->HeaderText = L"montant_total_ht";
-			this->montant_total_ht->Name = L"montant_total_ht";
+			this->article_seuil_reapprovisionnement->HeaderText = L"article_seuil_reapprovisionnement";
+			this->article_seuil_reapprovisionnement->Name = L"article_seuil_reapprovisionnement";
 			// 
-			// montant_total_tva
+			// textBox1
 			// 
-			this->montant_total_tva->HeaderText = L"montant_total_tva";
-			this->montant_total_tva->Name = L"montant_total_tva";
+			this->textBox1->Location = System::Drawing::Point(126, 137);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(96, 20);
+			this->textBox1->TabIndex = 47;
 			// 
-			// montant_total_ttc
+			// label1
 			// 
-			this->montant_total_ttc->HeaderText = L"montant_total_ttc";
-			this->montant_total_ttc->Name = L"montant_total_ttc";
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+				static_cast<System::Int32>(static_cast<System::Byte>(152)));
+			this->label1->Location = System::Drawing::Point(27, 131);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(70, 25);
+			this->label1->TabIndex = 48;
+			this->label1->Text = L"Nature";
 			// 
-			// id_client
-			// 
-			this->id_client->HeaderText = L"id_client";
-			this->id_client->Name = L"id_client";
-			// 
-			// id_facture
-			// 
-			this->id_facture->HeaderText = L"id_facture";
-			this->id_facture->Name = L"id_facture";
-			// 
-			// SuppCommande
+			// SuppArticle
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)));
 			this->ClientSize = System::Drawing::Size(793, 478);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->labelrecherche);
 			this->Controls->Add(this->buttonsupprimer);
 			this->Controls->Add(this->panelmove1);
 			this->Controls->Add(this->buttonrechercher);
-			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->labelsupprimer);
 			this->Controls->Add(this->textBoxrefcommande);
 			this->Controls->Add(this->nom);
 			this->Controls->Add(this->textBoxrefsuppcommande);
 			this->Controls->Add(this->labelnclient);
+			this->Controls->Add(this->dataGridView1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"SuppCommande";
-			this->Text = L"SuppCommande";
+			this->Name = L"SuppArticle";
+			this->Text = L"SuppArticle";
 			this->panelmove1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
@@ -358,8 +359,8 @@ namespace Interface {
 	{
 		if (e->Button == System::Windows::Forms::MouseButtons::Left)
 		{
-			SuppCommande::Left += e->X - PanelMouseDownLocation.X;
-			SuppCommande::Top += e->Y - PanelMouseDownLocation.Y;
+			SuppArticle::Left += e->X - PanelMouseDownLocation.X;
+			SuppArticle::Top += e->Y - PanelMouseDownLocation.Y;
 		}
 	}
 
@@ -371,28 +372,17 @@ namespace Interface {
 	{
 		dragFormMouseMove(sender, e);
 	}
-	private: System::Void buttonsupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
-		//APPLIQUER SUPPRESSION
-		servicescommande^ oservicecommande = gcnew servicescommande();
-		CLcommande^ oclient = gcnew CLcommande();
-		CAD^ connection = gcnew CAD();
-		oservicecommande->setoCad(connection);
-
-		oclient->setIdcommande(int::Parse(textBoxrefsuppcommande->Text));
-
-		oservicecommande->setoMap(oclient);
-		oservicecommande->supprimercommande(oclient);
-
-	}
-private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+private: System::Void nom_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void buttonrechercher_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ ref = textBoxrefcommande->Text;
+	//LANCER RECHERCHE
+	String^ nom = textBoxrefcommande->Text;
+	String^ nature = textBox1->Text;
 
 	
 	String^ constring = "Data Source=LAPTOP-J0DFQRK5\\MSSQL;Initial Catalog=PROJET_POO2;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
-	SqlCommand^ cmdDataBase = gcnew SqlCommand("select * from Commande where ref_commande = '" + ref + "';", conDataBase);
+	SqlCommand^ cmdDataBase = gcnew SqlCommand("select * from Article where article_nom = '" + nom + "' and article_nature = '" + nature +"';", conDataBase);
 	conDataBase->Open();
 	SqlDataReader^ myReader = cmdDataBase->ExecuteReader();
 	
@@ -400,9 +390,21 @@ private: System::Void buttonrechercher_Click(System::Object^ sender, System::Eve
 	while (myReader->Read())
 	{
 
-		dataGridView1->Rows->Add(myReader[0],myReader[1],myReader[2],myReader[3],myReader[4],myReader[5],myReader[6],myReader[7],myReader[8],myReader[9]);
+		dataGridView1->Rows->Add(myReader[0],myReader[1],myReader[2],myReader[3],myReader[4],myReader[5]);
 	}
 	conDataBase->Close();
+}
+private: System::Void buttonsupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
+	//SUPPRESSION ARTICLE
+	servicesarticle^ oservicearticle = gcnew servicesarticle();
+	CLarticle^ oarticle = gcnew CLarticle();
+	CAD^ connection = gcnew CAD();
+	oservicearticle->setoCad(connection);
+
+	oarticle->setIdarticle(int::Parse(textBoxrefsuppcommande->Text));
+
+	oservicearticle->setoMap(oarticle);
+	oservicearticle->supprimerarticle(oarticle);
 }
 };
 }

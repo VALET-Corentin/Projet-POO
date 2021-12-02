@@ -13,5 +13,6 @@ public:
 	CAD(void);
 	System::Data::DataSet^ getRows(System::String^, System::String^);
 	void actionRows(System::String^);
+	System::Data::DataTable^ getDataTable(System::String^);
 	System::Data::SqlClient::SqlDataReader^ getDataReader(System::String^);
 };

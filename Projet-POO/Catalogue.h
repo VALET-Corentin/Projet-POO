@@ -1,6 +1,7 @@
 #pragma once
 #include "AddArticle.h"
 #include "ListeArticle.h"
+#include "SuppArticle.h"
 
 namespace Interface {
 
@@ -176,6 +177,9 @@ private: System::Void btn_addarticle_Click(System::Object^ sender, System::Event
 	addarticleFrm->ShowDialog();
 }
 private: System::Void btn_deletearticle_Click(System::Object^ sender, System::EventArgs^ e) {
+	//SUPPRIMER ARTICLE
+	Interface::SuppArticle^ supparticleFrm = gcnew Interface::SuppArticle();
+	supparticleFrm->ShowDialog();
 }
 private: System::Void btn_modifierarticle_Click(System::Object^ sender, System::EventArgs^ e) {
 }

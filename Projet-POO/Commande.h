@@ -1,4 +1,6 @@
 #pragma once
+#include "AddCommande.h"
+#include "SuppCommande.h"
 
 namespace Interface {
 
@@ -71,9 +73,10 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->button_listecommande->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->button_listecommande->Location = System::Drawing::Point(542, 289);
+			this->button_listecommande->Location = System::Drawing::Point(406, 235);
+			this->button_listecommande->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button_listecommande->Name = L"button_listecommande";
-			this->button_listecommande->Size = System::Drawing::Size(292, 181);
+			this->button_listecommande->Size = System::Drawing::Size(219, 147);
 			this->button_listecommande->TabIndex = 20;
 			this->button_listecommande->Text = L"Liste des commandes";
 			this->button_listecommande->TextAlign = System::Drawing::ContentAlignment::TopCenter;
@@ -90,13 +93,15 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->button1->Location = System::Drawing::Point(542, 46);
+			this->button1->Location = System::Drawing::Point(406, 37);
+			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(292, 181);
+			this->button1->Size = System::Drawing::Size(219, 147);
 			this->button1->TabIndex = 21;
 			this->button1->Text = L"Supprimer une commande";
 			this->button1->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &Commande::button1_Click);
 			// 
 			// button2
 			// 
@@ -109,9 +114,10 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->button2->Location = System::Drawing::Point(76, 289);
+			this->button2->Location = System::Drawing::Point(57, 235);
+			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(292, 181);
+			this->button2->Size = System::Drawing::Size(219, 147);
 			this->button2->TabIndex = 22;
 			this->button2->Text = L"Modifier une commande";
 			this->button2->TextAlign = System::Drawing::ContentAlignment::TopCenter;
@@ -128,9 +134,10 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->button3->Location = System::Drawing::Point(76, 46);
+			this->button3->Location = System::Drawing::Point(57, 37);
+			this->button3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(292, 181);
+			this->button3->Size = System::Drawing::Size(219, 147);
 			this->button3->TabIndex = 23;
 			this->button3->Text = L"Ajouter une commande";
 			this->button3->TextAlign = System::Drawing::ContentAlignment::TopCenter;
@@ -138,21 +145,28 @@ namespace Interface {
 			// 
 			// Commande
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)));
-			this->ClientSize = System::Drawing::Size(934, 504);
+			this->ClientSize = System::Drawing::Size(700, 410);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->button_listecommande);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"Commande";
 			this->Text = L"Commande";
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	};
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		//SUPPRESSION COMMANDE
+
+		Interface::SuppCommande^ suppcommandeFrm = gcnew Interface::SuppCommande();
+		suppcommandeFrm->ShowDialog();
+	}
+};
 }

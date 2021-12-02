@@ -1,4 +1,6 @@
 #pragma once
+#include "MAP.h"
+#include "ServicesArticle.h"
 
 namespace Interface {
 
@@ -92,9 +94,9 @@ namespace Interface {
 			this->panelmove1->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->panelmove1->Controls->Add(this->X);
 			this->panelmove1->Location = System::Drawing::Point(0, -1);
-			this->panelmove1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->panelmove1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->panelmove1->Name = L"panelmove1";
-			this->panelmove1->Size = System::Drawing::Size(1057, 39);
+			this->panelmove1->Size = System::Drawing::Size(793, 32);
 			this->panelmove1->TabIndex = 25;
 			this->panelmove1->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &ListeArticle::panelmove1_MouseDown);
 			this->panelmove1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &ListeArticle::panelmove1_MouseMove);
@@ -106,10 +108,10 @@ namespace Interface {
 			this->X->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->X->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)));
-			this->X->Location = System::Drawing::Point(1020, 0);
-			this->X->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->X->Location = System::Drawing::Point(765, 0);
+			this->X->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->X->Name = L"X";
-			this->X->Size = System::Drawing::Size(37, 39);
+			this->X->Size = System::Drawing::Size(28, 32);
 			this->X->TabIndex = 1;
 			this->X->Text = L"X";
 			this->X->UseVisualStyleBackColor = false;
@@ -124,10 +126,10 @@ namespace Interface {
 				static_cast<System::Byte>(0)));
 			this->buttonactualiser->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->buttonactualiser->Location = System::Drawing::Point(407, 65);
-			this->buttonactualiser->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->buttonactualiser->Location = System::Drawing::Point(305, 53);
+			this->buttonactualiser->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->buttonactualiser->Name = L"buttonactualiser";
-			this->buttonactualiser->Size = System::Drawing::Size(169, 50);
+			this->buttonactualiser->Size = System::Drawing::Size(127, 41);
 			this->buttonactualiser->TabIndex = 27;
 			this->buttonactualiser->Text = L"Actualiser";
 			this->buttonactualiser->UseVisualStyleBackColor = true;
@@ -140,12 +142,12 @@ namespace Interface {
 				this->id_article,
 					this->article_nom, this->article_quantité, this->article_puht, this->article_nature, this->article_seuil_reapprovisionnement
 			});
-			this->dataGridView1->Location = System::Drawing::Point(15, 154);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dataGridView1->Location = System::Drawing::Point(11, 125);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1028, 420);
+			this->dataGridView1->Size = System::Drawing::Size(771, 341);
 			this->dataGridView1->TabIndex = 26;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ListeArticle::dataGridView1_CellContentClick);
 			// 
@@ -193,18 +195,18 @@ namespace Interface {
 			// 
 			// ListeArticle
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)));
-			this->ClientSize = System::Drawing::Size(1057, 588);
+			this->ClientSize = System::Drawing::Size(793, 478);
 			this->Controls->Add(this->panelmove1);
 			this->Controls->Add(this->buttonactualiser);
 			this->Controls->Add(this->dataGridView1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"ListeArticle";
 			this->Text = L"ListeArticle";
+			this->Load += gcnew System::EventHandler(this, &ListeArticle::ListeArticle_Load);
 			this->panelmove1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
@@ -247,7 +249,7 @@ private: System::Void X_Click(System::Object^ sender, System::EventArgs^ e) {
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 private: System::Void buttonactualiser_Click(System::Object^ sender, System::EventArgs^ e) {
-	/*String^ constring = "Data Source=OMEN-CORENTIN\\MSSQL_CORENTIN;Initial Catalog=PROJET_POO3;Integrated Security=True";
+	String^ constring = "Data Source=LAPTOP-J0DFQRK5\\MSSQL;Initial Catalog=PROJET_POO2;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 	SqlCommand^ cmdDataBase = gcnew SqlCommand("select * from Article ", conDataBase);
 	conDataBase->Open();
@@ -257,12 +259,30 @@ private: System::Void buttonactualiser_Click(System::Object^ sender, System::Eve
 	while (myReader->Read())
 	{
 
-		dataGridView1->Rows->Add(myReader[0]);
+		dataGridView1->Rows->Add(myReader[0],myReader[1],myReader[2],myReader[3],myReader[4],myReader[5]);
 	}
 	conDataBase->Close();
-	*/
 
 
+
+
+
+}
+private: System::Void ListeArticle_Load(System::Object^ sender, System::EventArgs^ e) {
+
+	String^ constring = "Data Source=LAPTOP-J0DFQRK5\\MSSQL;Initial Catalog=PROJET_POO2;Integrated Security=True";
+	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
+	SqlCommand^ cmdDataBase = gcnew SqlCommand("select * from Article ", conDataBase);
+	conDataBase->Open();
+	SqlDataReader^ myReader = cmdDataBase->ExecuteReader();
+	
+	dataGridView1->Rows->Clear();
+	while (myReader->Read())
+	{
+
+		dataGridView1->Rows->Add(myReader[0],myReader[1],myReader[2],myReader[3],myReader[4],myReader[5]);
+	}
+	conDataBase->Close();
 
 }
 };

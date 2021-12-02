@@ -1,4 +1,6 @@
 #pragma once
+#include "MAP.h"
+#include "ServicesPersonnel.h"
 
 namespace Interface {
 
@@ -8,6 +10,7 @@ namespace Interface {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Description résumée de SuppPersonnel
@@ -22,6 +25,15 @@ namespace Interface {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ id_personnel;
+	public:
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ personnel_nom;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ personnel_prenom;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ personnel_date_embauche;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ personnel_adresse_mail;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ personnel_numero_telephone;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ id_adresse;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ id_personnel_Est_gere;
 
 	private:
 		Point PanelMouseDownLocation;
@@ -78,6 +90,14 @@ namespace Interface {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->id_personnel = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->personnel_nom = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->personnel_prenom = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->personnel_date_embauche = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->personnel_adresse_mail = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->personnel_numero_telephone = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->id_adresse = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->id_personnel_Est_gere = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->panelmove1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -140,6 +160,7 @@ namespace Interface {
 			this->buttonsupprimer->TabIndex = 36;
 			this->buttonsupprimer->Text = L"Supprimer";
 			this->buttonsupprimer->UseVisualStyleBackColor = true;
+			this->buttonsupprimer->Click += gcnew System::EventHandler(this, &SuppPersonnel::buttonsupprimer_Click);
 			// 
 			// buttonrechercher
 			// 
@@ -155,6 +176,7 @@ namespace Interface {
 			this->buttonrechercher->TabIndex = 35;
 			this->buttonrechercher->Text = L"Rechercher";
 			this->buttonrechercher->UseVisualStyleBackColor = true;
+			this->buttonrechercher->Click += gcnew System::EventHandler(this, &SuppPersonnel::buttonrechercher_Click);
 			// 
 			// labelsupprimer
 			// 
@@ -227,6 +249,7 @@ namespace Interface {
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(96, 20);
 			this->textBox2->TabIndex = 29;
+			this->textBox2->TextChanged += gcnew System::EventHandler(this, &SuppPersonnel::textBox2_TextChanged);
 			// 
 			// textBox1
 			// 
@@ -235,10 +258,16 @@ namespace Interface {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(96, 20);
 			this->textBox1->TabIndex = 28;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &SuppPersonnel::textBox1_TextChanged);
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
+				this->id_personnel,
+					this->personnel_nom, this->personnel_prenom, this->personnel_date_embauche, this->personnel_adresse_mail, this->personnel_numero_telephone,
+					this->id_adresse, this->id_personnel_Est_gere
+			});
 			this->dataGridView1->Location = System::Drawing::Point(56, 167);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
@@ -246,6 +275,46 @@ namespace Interface {
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(677, 291);
 			this->dataGridView1->TabIndex = 27;
+			// 
+			// id_personnel
+			// 
+			this->id_personnel->HeaderText = L"id_personnel";
+			this->id_personnel->Name = L"id_personnel";
+			// 
+			// personnel_nom
+			// 
+			this->personnel_nom->HeaderText = L"personnel_nom";
+			this->personnel_nom->Name = L"personnel_nom";
+			// 
+			// personnel_prenom
+			// 
+			this->personnel_prenom->HeaderText = L"personnel_prenom";
+			this->personnel_prenom->Name = L"personnel_prenom";
+			// 
+			// personnel_date_embauche
+			// 
+			this->personnel_date_embauche->HeaderText = L"personnel_date_embauche";
+			this->personnel_date_embauche->Name = L"personnel_date_embauche";
+			// 
+			// personnel_adresse_mail
+			// 
+			this->personnel_adresse_mail->HeaderText = L"personnel_adresse_mail";
+			this->personnel_adresse_mail->Name = L"personnel_adresse_mail";
+			// 
+			// personnel_numero_telephone
+			// 
+			this->personnel_numero_telephone->HeaderText = L"personnel_numero_telephone";
+			this->personnel_numero_telephone->Name = L"personnel_numero_telephone";
+			// 
+			// id_adresse
+			// 
+			this->id_adresse->HeaderText = L"id_adresse";
+			this->id_adresse->Name = L"id_adresse";
+			// 
+			// id_personnel_Est_gere
+			// 
+			this->id_personnel_Est_gere->HeaderText = L"id_personnel_Est_gere";
+			this->id_personnel_Est_gere->Name = L"id_personnel_Est_gere";
 			// 
 			// SuppPersonnel
 			// 
@@ -309,5 +378,41 @@ namespace Interface {
 	{
 		dragFormMouseMove(sender, e);
 	}
+private: System::Void buttonsupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
+	//SUPPRESSION PERSONNEL
+	servicespersonnel^ oservicepersonnel = gcnew servicespersonnel();
+	CLpersonnel^ opersonnel = gcnew CLpersonnel();
+	CAD^ connection = gcnew CAD();
+	oservicepersonnel->setoCad(connection);
+
+	opersonnel->setIdpersonne(int::Parse(textBox3->Text));
+
+	oservicepersonnel->setoMap(opersonnel);
+	oservicepersonnel->supprimerpersonnel(opersonnel);
+
+}
+private: System::Void buttonrechercher_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ nom = textBox1->Text;
+	String^ prenom = textBox2->Text;
+
+	
+	String^ constring = "Data Source=LAPTOP-J0DFQRK5\\MSSQL;Initial Catalog=PROJET_POO2;Integrated Security=True";
+	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
+	SqlCommand^ cmdDataBase = gcnew SqlCommand("select * from Personnel where personnel_nom = '" + nom + "' and personnel_prenom = '" + prenom +"';", conDataBase);
+	conDataBase->Open();
+	SqlDataReader^ myReader = cmdDataBase->ExecuteReader();
+	
+	dataGridView1->Rows->Clear();
+	while (myReader->Read())
+	{
+
+		dataGridView1->Rows->Add(myReader[0],myReader[1],myReader[2],myReader[3],myReader[4],myReader[5],myReader[6],myReader[7]);
+	}
+	conDataBase->Close();
+}
+private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

@@ -1,6 +1,8 @@
 #pragma once
 #include "MAP.h"
 #include "CAD.h"
+#include <iostream>
+
 
 ref class servicesville
 {
@@ -9,7 +11,7 @@ private:
     CLville^ oMap;
 public:
     servicesville(void);
-    System::Data::DataSet^ selectionnerville(System::String^);
+    System::Data::DataTable^ selectionnerville();
     void setoMap(CLville^);
     CLville^ getoMap(void);
     void setoCad(CAD^);

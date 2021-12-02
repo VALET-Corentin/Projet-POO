@@ -96,7 +96,7 @@ String^ CLpersonnel::Insert()
 
 String^ CLpersonnel::Delete()
 {
-    return "delete from Personnel where id_client=" + this->id_personne + ";";
+    return "delete from Personnel where id_personnel=" + this->id_personne + ";";
 }
 
 String^ CLpersonnel::Update()
@@ -128,7 +128,7 @@ void CLclient::setClientdatepremierachat(System::String^ clientdatepremierachat)
 
 String^ CLclient::Select()
 {
-    return "select * from Client ";
+    return "select * from Client where client_nom = " + this->nom + " and client_prenom = " + this->prenom + ";";
 }
 
 String^ CLclient::Insert()
@@ -335,7 +335,7 @@ String^ CLarticle::Insert()
 
 String^ CLarticle::Delete()
 {
-    return "delete from Client where id_client=" + this->id_article + ";";
+    return "delete from Article where id_article=" + this->id_article + ";";
 }
 
 String^ CLarticle::Update()
@@ -447,6 +447,26 @@ void CLcommande::setMontanttotalttc(float montanttotalttc)
     montant_total_ttc = montanttotalttc;
 }
 
+String^ CLcommande::Select()
+{
+    return "select * from Commande ";
+}
+
+String^ CLcommande::Insert()
+{
+    return "insert into Commande (ref_commande,date_livraison,date_emission,total_articles,montant_total_ht,montant_total_tva,montant_total_ttc,id_client,id_facture) values('" + this->ref_commande + "','" + this->date_livraison + "','" + this->date_emission + "','" + this->total_articles + "','" + this->montant_total_ht + "','" + this->montant_total_tva + "','" + this->montant_total_ttc + "','" + this->id_client + "','" + this->id_facture + "');";
+}
+
+String^ CLcommande::Delete()
+{
+    return "delete from Commande where id_commande=" + this->id_commande + ";";
+}
+
+String^ CLcommande::Update()
+{
+    return "";
+}
+
 //#---Classe Ville ---#
 
 int CLville::getIdville()
@@ -520,6 +540,8 @@ int CLlivre::getIdclient()
 {
     return id_client;
 }
+
+
 
 void CLlivre::setIdclient(int idclient)
 {

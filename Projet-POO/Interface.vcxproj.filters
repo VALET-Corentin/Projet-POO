@@ -114,6 +114,21 @@
     <ClCompile Include="ServiceArticle.cpp">
       <Filter>SQL.cpp</Filter>
     </ClCompile>
+    <ClCompile Include="ServicesPersonnel.cpp">
+      <Filter>SQL.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ServicesCommande.cpp">
+      <Filter>SQL.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="SuppArticle.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Top10.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Moinsvendus.cpp">
+      <Filter>Forms.cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -208,6 +223,21 @@
     </ClInclude>
     <ClInclude Include="ServicesArticle.h">
       <Filter>SQL.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ServicesPersonnel.h">
+      <Filter>SQL.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ServicesCommande.h">
+      <Filter>SQL.h</Filter>
+    </ClInclude>
+    <ClInclude Include="SuppArticle.h">
+      <Filter>Form.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Top10.h">
+      <Filter>Form.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Moinsvendus.h">
+      <Filter>Form.h</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
