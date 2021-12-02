@@ -1,0 +1,42 @@
+﻿  Client.cpp
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(14,11): warning C4570: 'CLpersonne' : n'est pas explicitement déclaré comme abstract mais comporte des fonctions abstract
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(14,11): message : 'System::String ^CLpersonne::Select(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(39): message : voir la déclaration de 'CLpersonne::Select'
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(14,11): message : 'System::String ^CLpersonne::Insert(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(40): message : voir la déclaration de 'CLpersonne::Insert'
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(14,11): message : 'System::String ^CLpersonne::Delete(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(41): message : voir la déclaration de 'CLpersonne::Delete'
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(14,11): message : 'System::String ^CLpersonne::Update(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(42): message : voir la déclaration de 'CLpersonne::Update'
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(47,11): warning C4570: 'CLpersonnel' : n'est pas explicitement déclaré comme abstract mais comporte des fonctions abstract
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(47,11): message : 'System::String ^CLpersonne::Select(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(39): message : voir la déclaration de 'CLpersonne::Select'
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(47,11): message : 'System::String ^CLpersonne::Insert(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(40): message : voir la déclaration de 'CLpersonne::Insert'
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(47,11): message : 'System::String ^CLpersonne::Delete(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(41): message : voir la déclaration de 'CLpersonne::Delete'
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(47,11): message : 'System::String ^CLpersonne::Update(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(42): message : voir la déclaration de 'CLpersonne::Update'
+  MyForm.cpp
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(14,11): warning C4570: 'CLpersonne' : n'est pas explicitement déclaré comme abstract mais comporte des fonctions abstract
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(14,11): message : 'System::String ^CLpersonne::Select(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(39): message : voir la déclaration de 'CLpersonne::Select'
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(14,11): message : 'System::String ^CLpersonne::Insert(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(40): message : voir la déclaration de 'CLpersonne::Insert'
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(14,11): message : 'System::String ^CLpersonne::Delete(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(41): message : voir la déclaration de 'CLpersonne::Delete'
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(14,11): message : 'System::String ^CLpersonne::Update(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(42): message : voir la déclaration de 'CLpersonne::Update'
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(47,11): warning C4570: 'CLpersonnel' : n'est pas explicitement déclaré comme abstract mais comporte des fonctions abstract
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(47,11): message : 'System::String ^CLpersonne::Select(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(39): message : voir la déclaration de 'CLpersonne::Select'
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(47,11): message : 'System::String ^CLpersonne::Insert(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(40): message : voir la déclaration de 'CLpersonne::Insert'
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(47,11): message : 'System::String ^CLpersonne::Delete(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(41): message : voir la déclaration de 'CLpersonne::Delete'
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(47,11): message : 'System::String ^CLpersonne::Update(void)' : est abstrait
+C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\MAP.h(42): message : voir la déclaration de 'CLpersonne::Update'
+  SuppClient.cpp
+  Génération de code en cours...
+  Accueil.obj : module MSIL détecté ; liens incrémentiels désactivés pour MSIL ; édition de liens complète en cours
+  Interface.vcxproj -> C:\Users\coren\OneDrive - Association Cesi Viacesi mail\Deuxième année\POO\GitHub\Projet-POO\Livrable 3\Interface\Debug\Interface.exe
