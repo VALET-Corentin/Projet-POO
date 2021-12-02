@@ -18,6 +18,4 @@ public:
     void setoCad(CAD^);
     CAD^ getoCad(void);
 
-
-
 };
