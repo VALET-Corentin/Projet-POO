@@ -1,0 +1,435 @@
+USE [master]
+GO
+/****** Object:  Database [PROJET_POO2]    Script Date: 03/12/2021 12:37:29 ******/
+CREATE DATABASE [PROJET_POO2]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'PROJET_POO2', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQL\MSSQL\DATA\PROJET_POO2.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'PROJET_POO2_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQL\MSSQL\DATA\PROJET_POO2_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [PROJET_POO2] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [PROJET_POO2].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [PROJET_POO2] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [PROJET_POO2] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [PROJET_POO2] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [PROJET_POO2] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [PROJET_POO2] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET RECOVERY FULL 
+GO
+ALTER DATABASE [PROJET_POO2] SET  MULTI_USER 
+GO
+ALTER DATABASE [PROJET_POO2] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [PROJET_POO2] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [PROJET_POO2] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [PROJET_POO2] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [PROJET_POO2] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [PROJET_POO2] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'PROJET_POO2', N'ON'
+GO
+ALTER DATABASE [PROJET_POO2] SET QUERY_STORE = OFF
+GO
+USE [PROJET_POO2]
+GO
+/****** Object:  Table [dbo].[Adresse]    Script Date: 03/12/2021 12:37:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Adresse](
+	[id_adresse] [int] IDENTITY(1,1) NOT NULL,
+	[numero_rue] [int] NOT NULL,
+	[nom_rue] [char](40) NOT NULL,
+	[id_ville] [int] NOT NULL,
+ CONSTRAINT [Adresse_PK] PRIMARY KEY CLUSTERED 
+(
+	[id_adresse] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Article]    Script Date: 03/12/2021 12:37:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Article](
+	[id_article] [int] IDENTITY(1,1) NOT NULL,
+	[article_nom] [varchar](40) NOT NULL,
+	[article_quantite] [int] NOT NULL,
+	[article_puht] [real] NOT NULL,
+	[article_nature] [char](40) NOT NULL,
+	[artcile_seuil_reapprovisionnement] [int] NOT NULL,
+ CONSTRAINT [Article_PK] PRIMARY KEY CLUSTERED 
+(
+	[id_article] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Client]    Script Date: 03/12/2021 12:37:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Client](
+	[id_client] [int] IDENTITY(1,1) NOT NULL,
+	[client_nom] [char](40) NOT NULL,
+	[client_prenom] [char](40) NOT NULL,
+	[client_date_naissance] [date] NOT NULL,
+	[client_date_premier_achat] [date] NOT NULL,
+	[client_adresse_mail] [varchar](40) NULL,
+	[client_numero_telephone] [varchar](10) NULL,
+ CONSTRAINT [Client_PK] PRIMARY KEY CLUSTERED 
+(
+	[id_client] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Commande]    Script Date: 03/12/2021 12:37:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Commande](
+	[id_commande] [int] IDENTITY(1,1) NOT NULL,
+	[ref_commande] [varchar](40) NOT NULL,
+	[date_livraison] [date] NOT NULL,
+	[date_emission] [date] NOT NULL,
+	[total_articles] [real] NOT NULL,
+	[montant_total_ht] [real] NOT NULL,
+	[montant_total_tva] [real] NOT NULL,
+	[montant_total_ttc] [real] NOT NULL,
+	[id_client] [int] NOT NULL,
+	[id_facture] [int] NULL,
+ CONSTRAINT [Commande_PK] PRIMARY KEY CLUSTERED 
+(
+	[id_commande] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Contenir]    Script Date: 03/12/2021 12:37:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Contenir](
+	[id_article] [int] NOT NULL,
+	[id_commande] [int] NOT NULL,
+	[quantite] [int] NOT NULL,
+ CONSTRAINT [Contenir_PK] PRIMARY KEY CLUSTERED 
+(
+	[id_article] ASC,
+	[id_commande] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Facture]    Script Date: 03/12/2021 12:37:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Facture](
+	[id_facture] [int] IDENTITY(1,1) NOT NULL,
+	[nom_societe] [varchar](40) NOT NULL,
+	[numero_service_client] [varchar](40) NOT NULL,
+	[logo_societe] [varchar](40) NOT NULL,
+	[id_commande] [int] NOT NULL,
+ CONSTRAINT [Facture_PK] PRIMARY KEY CLUSTERED 
+(
+	[id_facture] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Livre]    Script Date: 03/12/2021 12:37:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Livre](
+	[id_adresse] [int] NOT NULL,
+	[id_client] [int] NOT NULL,
+	[type_adresse] [char](5) NOT NULL,
+ CONSTRAINT [Livre_PK] PRIMARY KEY CLUSTERED 
+(
+	[id_adresse] ASC,
+	[id_client] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Paiement]    Script Date: 03/12/2021 12:37:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Paiement](
+	[id_paiement] [int] IDENTITY(1,1) NOT NULL,
+	[date_paiement] [date] NOT NULL,
+	[date_reglement] [date] NOT NULL,
+	[moyen_paiement] [char](40) NOT NULL,
+	[solde_reglement] [real] NOT NULL,
+	[id_facture] [int] NOT NULL,
+ CONSTRAINT [Paiement_PK] PRIMARY KEY CLUSTERED 
+(
+	[id_paiement] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Personnel]    Script Date: 03/12/2021 12:37:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Personnel](
+	[id_personnel] [int] IDENTITY(1,1) NOT NULL,
+	[personnel_nom] [char](40) NOT NULL,
+	[personnel_prenom] [char](40) NOT NULL,
+	[personnel_date_embauche] [date] NOT NULL,
+	[personnel_adresse_mail] [varchar](40) NULL,
+	[personnel_numero_telephone] [varchar](10) NULL,
+	[id_adresse] [int] NOT NULL,
+	[id_personnel_Est_gere] [int] NULL,
+ CONSTRAINT [Personnel_PK] PRIMARY KEY CLUSTERED 
+(
+	[id_personnel] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Ville]    Script Date: 03/12/2021 12:37:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Ville](
+	[id_ville] [int] IDENTITY(1,1) NOT NULL,
+	[ville] [char](40) NOT NULL,
+	[code_postal] [varchar](5) NOT NULL,
+	[pays] [char](40) NOT NULL,
+ CONSTRAINT [Ville_PK] PRIMARY KEY CLUSTERED 
+(
+	[id_ville] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Adresse] ON 
+GO
+INSERT [dbo].[Adresse] ([id_adresse], [numero_rue], [nom_rue], [id_ville]) VALUES (1, 26, N'Place de la Nation                      ', 1)
+GO
+SET IDENTITY_INSERT [dbo].[Adresse] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Article] ON 
+GO
+INSERT [dbo].[Article] ([id_article], [article_nom], [article_quantite], [article_puht], [article_nature], [artcile_seuil_reapprovisionnement]) VALUES (1, N'Article_1', 5, 9, N'Electronique                            ', 2)
+GO
+INSERT [dbo].[Article] ([id_article], [article_nom], [article_quantite], [article_puht], [article_nature], [artcile_seuil_reapprovisionnement]) VALUES (2, N'Article_2', 5, 20, N'PC                                      ', 2)
+GO
+INSERT [dbo].[Article] ([id_article], [article_nom], [article_quantite], [article_puht], [article_nature], [artcile_seuil_reapprovisionnement]) VALUES (3, N'Article_3', 1, 5, N'Cable                                   ', 2)
+GO
+INSERT [dbo].[Article] ([id_article], [article_nom], [article_quantite], [article_puht], [article_nature], [artcile_seuil_reapprovisionnement]) VALUES (4, N'Article_50', 10, 5, N'PC                                      ', 1)
+GO
+INSERT [dbo].[Article] ([id_article], [article_nom], [article_quantite], [article_puht], [article_nature], [artcile_seuil_reapprovisionnement]) VALUES (5, N'Article_6', 60, 199, N'PC                                      ', 1)
+GO
+INSERT [dbo].[Article] ([id_article], [article_nom], [article_quantite], [article_puht], [article_nature], [artcile_seuil_reapprovisionnement]) VALUES (6, N'Article_7', 50, 50, N'PC                                      ', 1)
+GO
+INSERT [dbo].[Article] ([id_article], [article_nom], [article_quantite], [article_puht], [article_nature], [artcile_seuil_reapprovisionnement]) VALUES (7, N'Article_8', 50, 20, N'PC                                      ', 1)
+GO
+INSERT [dbo].[Article] ([id_article], [article_nom], [article_quantite], [article_puht], [article_nature], [artcile_seuil_reapprovisionnement]) VALUES (9, N'Article_9', 15, 100, N'PC                                      ', 1)
+GO
+INSERT [dbo].[Article] ([id_article], [article_nom], [article_quantite], [article_puht], [article_nature], [artcile_seuil_reapprovisionnement]) VALUES (10, N'Article_10', 50, 50, N'PC                                      ', 5)
+GO
+INSERT [dbo].[Article] ([id_article], [article_nom], [article_quantite], [article_puht], [article_nature], [artcile_seuil_reapprovisionnement]) VALUES (11, N'Article_11', 50, 50, N'PC                                      ', 5)
+GO
+INSERT [dbo].[Article] ([id_article], [article_nom], [article_quantite], [article_puht], [article_nature], [artcile_seuil_reapprovisionnement]) VALUES (12, N'Article_13', 50, 50, N'PC                                      ', 3)
+GO
+SET IDENTITY_INSERT [dbo].[Article] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Client] ON 
+GO
+INSERT [dbo].[Client] ([id_client], [client_nom], [client_prenom], [client_date_naissance], [client_date_premier_achat], [client_adresse_mail], [client_numero_telephone]) VALUES (1, N'Dupont                                  ', N'Jean                                    ', CAST(N'2015-09-23' AS Date), CAST(N'2015-09-23' AS Date), N'jean.dupont@gmail.com', N'0695623584')
+GO
+INSERT [dbo].[Client] ([id_client], [client_nom], [client_prenom], [client_date_naissance], [client_date_premier_achat], [client_adresse_mail], [client_numero_telephone]) VALUES (19, N'Mathieu                                 ', N'Thibaut                                 ', CAST(N'2002-03-25' AS Date), CAST(N'1900-01-01' AS Date), N'orreli1@lol.fr', N'0641256325')
+GO
+INSERT [dbo].[Client] ([id_client], [client_nom], [client_prenom], [client_date_naissance], [client_date_premier_achat], [client_adresse_mail], [client_numero_telephone]) VALUES (20, N'Vignac                                  ', N'Louis                                   ', CAST(N'1990-03-12' AS Date), CAST(N'2018-12-18' AS Date), N'capet.audric@gmail.com', N'0625145986')
+GO
+INSERT [dbo].[Client] ([id_client], [client_nom], [client_prenom], [client_date_naissance], [client_date_premier_achat], [client_adresse_mail], [client_numero_telephone]) VALUES (22, N'Michel                                  ', N'Alain                                   ', CAST(N'1978-02-17' AS Date), CAST(N'2021-10-09' AS Date), N'fauvel.matteo@gmail.com', N'0669345886')
+GO
+SET IDENTITY_INSERT [dbo].[Client] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Commande] ON 
+GO
+INSERT [dbo].[Commande] ([id_commande], [ref_commande], [date_livraison], [date_emission], [total_articles], [montant_total_ht], [montant_total_tva], [montant_total_ttc], [id_client], [id_facture]) VALUES (2, N'CA29IJ28', CAST(N'2015-09-23' AS Date), CAST(N'2015-09-23' AS Date), 5, 9, 1, 10, 1, 1)
+GO
+INSERT [dbo].[Commande] ([id_commande], [ref_commande], [date_livraison], [date_emission], [total_articles], [montant_total_ht], [montant_total_tva], [montant_total_ttc], [id_client], [id_facture]) VALUES (8, N'CA29IJ29', CAST(N'2016-05-26' AS Date), CAST(N'2016-05-26' AS Date), 3, 20, 1, 10, 1, 4)
+GO
+INSERT [dbo].[Commande] ([id_commande], [ref_commande], [date_livraison], [date_emission], [total_articles], [montant_total_ht], [montant_total_tva], [montant_total_ttc], [id_client], [id_facture]) VALUES (9, N'CA29IJ30', CAST(N'2016-05-29' AS Date), CAST(N'2016-05-29' AS Date), 2, 9, 1, 30, 1, NULL)
+GO
+SET IDENTITY_INSERT [dbo].[Commande] OFF
+GO
+INSERT [dbo].[Contenir] ([id_article], [id_commande], [quantite]) VALUES (1, 2, 3)
+GO
+INSERT [dbo].[Contenir] ([id_article], [id_commande], [quantite]) VALUES (2, 2, 10)
+GO
+INSERT [dbo].[Contenir] ([id_article], [id_commande], [quantite]) VALUES (3, 8, 2)
+GO
+INSERT [dbo].[Contenir] ([id_article], [id_commande], [quantite]) VALUES (4, 8, 1)
+GO
+INSERT [dbo].[Contenir] ([id_article], [id_commande], [quantite]) VALUES (5, 9, 15)
+GO
+INSERT [dbo].[Contenir] ([id_article], [id_commande], [quantite]) VALUES (6, 2, 5)
+GO
+INSERT [dbo].[Contenir] ([id_article], [id_commande], [quantite]) VALUES (7, 9, 20)
+GO
+INSERT [dbo].[Contenir] ([id_article], [id_commande], [quantite]) VALUES (9, 9, 9)
+GO
+INSERT [dbo].[Contenir] ([id_article], [id_commande], [quantite]) VALUES (10, 2, 5)
+GO
+INSERT [dbo].[Contenir] ([id_article], [id_commande], [quantite]) VALUES (11, 9, 2)
+GO
+INSERT [dbo].[Contenir] ([id_article], [id_commande], [quantite]) VALUES (12, 2, 50)
+GO
+SET IDENTITY_INSERT [dbo].[Facture] ON 
+GO
+INSERT [dbo].[Facture] ([id_facture], [nom_societe], [numero_service_client], [logo_societe], [id_commande]) VALUES (1, N'TULGA', N'0235625895', N'logo.png', 2)
+GO
+INSERT [dbo].[Facture] ([id_facture], [nom_societe], [numero_service_client], [logo_societe], [id_commande]) VALUES (4, N'TULLGA', N'0235625895', N'logo.png', 8)
+GO
+SET IDENTITY_INSERT [dbo].[Facture] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Personnel] ON 
+GO
+INSERT [dbo].[Personnel] ([id_personnel], [personnel_nom], [personnel_prenom], [personnel_date_embauche], [personnel_adresse_mail], [personnel_numero_telephone], [id_adresse], [id_personnel_Est_gere]) VALUES (5, N'Vignac                                  ', N'Charles                                 ', CAST(N'2011-05-25' AS Date), N'antoine.tom@gmail.com', N'0626584554', 1, NULL)
+GO
+INSERT [dbo].[Personnel] ([id_personnel], [personnel_nom], [personnel_prenom], [personnel_date_embauche], [personnel_adresse_mail], [personnel_numero_telephone], [id_adresse], [id_personnel_Est_gere]) VALUES (6, N'Alphonse                                ', N'Theo                                    ', CAST(N'2018-02-15' AS Date), N'valet.corentin@gmail.com', N'0624968554', 1, NULL)
+GO
+SET IDENTITY_INSERT [dbo].[Personnel] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Ville] ON 
+GO
+INSERT [dbo].[Ville] ([id_ville], [ville], [code_postal], [pays]) VALUES (1, N'Paris                                   ', N'75001', N'France                                  ')
+GO
+SET IDENTITY_INSERT [dbo].[Ville] OFF
+GO
+/****** Object:  Index [Commande_Facture0_AK]    Script Date: 03/12/2021 12:37:29 ******/
+ALTER TABLE [dbo].[Commande] ADD  CONSTRAINT [Commande_Facture0_AK] UNIQUE NONCLUSTERED 
+(
+	[id_facture] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+/****** Object:  Index [Facture_Commande0_AK]    Script Date: 03/12/2021 12:37:29 ******/
+ALTER TABLE [dbo].[Facture] ADD  CONSTRAINT [Facture_Commande0_AK] UNIQUE NONCLUSTERED 
+(
+	[id_commande] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Adresse]  WITH CHECK ADD  CONSTRAINT [Adresse_Ville0_FK] FOREIGN KEY([id_ville])
+REFERENCES [dbo].[Ville] ([id_ville])
+GO
+ALTER TABLE [dbo].[Adresse] CHECK CONSTRAINT [Adresse_Ville0_FK]
+GO
+ALTER TABLE [dbo].[Commande]  WITH CHECK ADD  CONSTRAINT [Commande_Client0_FK] FOREIGN KEY([id_client])
+REFERENCES [dbo].[Client] ([id_client])
+GO
+ALTER TABLE [dbo].[Commande] CHECK CONSTRAINT [Commande_Client0_FK]
+GO
+ALTER TABLE [dbo].[Contenir]  WITH CHECK ADD  CONSTRAINT [Contenir_Article0_FK] FOREIGN KEY([id_article])
+REFERENCES [dbo].[Article] ([id_article])
+GO
+ALTER TABLE [dbo].[Contenir] CHECK CONSTRAINT [Contenir_Article0_FK]
+GO
+ALTER TABLE [dbo].[Contenir]  WITH CHECK ADD  CONSTRAINT [Contenir_Commande1_FK] FOREIGN KEY([id_commande])
+REFERENCES [dbo].[Commande] ([id_commande])
+GO
+ALTER TABLE [dbo].[Contenir] CHECK CONSTRAINT [Contenir_Commande1_FK]
+GO
+ALTER TABLE [dbo].[Facture]  WITH CHECK ADD  CONSTRAINT [Facture_Commande0_FK] FOREIGN KEY([id_commande])
+REFERENCES [dbo].[Commande] ([id_commande])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Facture] CHECK CONSTRAINT [Facture_Commande0_FK]
+GO
+ALTER TABLE [dbo].[Facture]  WITH CHECK ADD  CONSTRAINT [FK_Facture_Facture] FOREIGN KEY([id_facture])
+REFERENCES [dbo].[Facture] ([id_facture])
+GO
+ALTER TABLE [dbo].[Facture] CHECK CONSTRAINT [FK_Facture_Facture]
+GO
+ALTER TABLE [dbo].[Livre]  WITH CHECK ADD  CONSTRAINT [Livre_Adresse0_FK] FOREIGN KEY([id_adresse])
+REFERENCES [dbo].[Adresse] ([id_adresse])
+GO
+ALTER TABLE [dbo].[Livre] CHECK CONSTRAINT [Livre_Adresse0_FK]
+GO
+ALTER TABLE [dbo].[Livre]  WITH CHECK ADD  CONSTRAINT [Livre_Client1_FK] FOREIGN KEY([id_client])
+REFERENCES [dbo].[Client] ([id_client])
+GO
+ALTER TABLE [dbo].[Livre] CHECK CONSTRAINT [Livre_Client1_FK]
+GO
+ALTER TABLE [dbo].[Paiement]  WITH CHECK ADD  CONSTRAINT [Paiement_Facture0_FK] FOREIGN KEY([id_facture])
+REFERENCES [dbo].[Facture] ([id_facture])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Paiement] CHECK CONSTRAINT [Paiement_Facture0_FK]
+GO
+ALTER TABLE [dbo].[Personnel]  WITH CHECK ADD  CONSTRAINT [Personnel_Adresse0_FK] FOREIGN KEY([id_adresse])
+REFERENCES [dbo].[Adresse] ([id_adresse])
+GO
+ALTER TABLE [dbo].[Personnel] CHECK CONSTRAINT [Personnel_Adresse0_FK]
+GO
+ALTER TABLE [dbo].[Personnel]  WITH CHECK ADD  CONSTRAINT [Personnel_Personnel1_FK] FOREIGN KEY([id_personnel_Est_gere])
+REFERENCES [dbo].[Personnel] ([id_personnel])
+GO
+ALTER TABLE [dbo].[Personnel] CHECK CONSTRAINT [Personnel_Personnel1_FK]
+GO
+USE [master]
+GO
+ALTER DATABASE [PROJET_POO2] SET  READ_WRITE 
+GO
